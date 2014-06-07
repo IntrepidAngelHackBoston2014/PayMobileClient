@@ -17,6 +17,8 @@
 #import <MapKit/MapKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <SystemConfiguration/SystemConfiguration.h>
-#import "AFNetworking.h"
+#import <PonyDebugger/PonyDebugger.h>
+#import <AFNetworking/AFNetworking.h>
 #import "SVProgressHUD.h"
+#import "IPLCommonMacros.h"
 #endif
