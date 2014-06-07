@@ -15,7 +15,7 @@ typedef void (^RetailerRequestFailure)(AFHTTPRequestOperation *operation, NSErro
 
 + (void) getMockRetailersWithSuccess:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure;
 
-@property (assign, nonatomic) NSNumber *retailerId;
+@property (strong, nonatomic) NSNumber *retailerId;
 @property (strong, nonatomic) NSString *storeNumber;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *city;
