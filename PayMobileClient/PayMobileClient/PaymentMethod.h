@@ -15,9 +15,9 @@ typedef enum {
     PaymentTypeCumberlandFarms,
     PaymentTypePayPal,
     PaymentTypeLevelUp,
-    PaymentTypeBitcoin,
+    PaymentTypeBitCoin,
     PaymentTypeLeaf,
-    PaymentTypeBitpay
+    PaymentTypeBitPay
 } PaymentType;
 
 typedef enum {
