@@ -13,6 +13,22 @@
 + (UIImage *)iconImageWithPaymentType:(PaymentType)paymentType {
     NSString *filename = nil;
     switch (paymentType) {
+        case PaymentTypeBitCoin:
+            break;
+        case PaymentTypeStarbucks:
+            break;
+        case PaymentTypePayPal:
+            break;
+        case PaymentTypeLevelUp:
+            break;
+        case PaymentTypeDunkinDonuts:
+            break;
+        case PaymentTypeCumberlandFarms:
+            break;
+        case PaymentTypeBitPay:
+            break;
+        case PaymentTypeLeaf:
+            break;
         default:
             break;
     }
