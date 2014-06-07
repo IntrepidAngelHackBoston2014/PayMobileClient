@@ -7,20 +7,56 @@
 //
 
 #import "PayMapViewController.h"
+#import "PayMapFilterViewController.h"
+#import "PaymentMethodFilter.h"
 
 @interface PayMapViewController () <CLLocationManagerDelegate>
 
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (weak, nonatomic) IBOutlet MKMapView *payMapView;
+
+
+@property (strong, nonatomic) PaymentMethodFilter *filter;
+@property (assign, nonatomic) BOOL isShowFilter;
+@property (strong, nonatomic) PayMapFilterViewController *filterViewController;
 
 @end
 
 @implementation PayMapViewController
 
+- (void)didTapFilterButton:(id)sender {
+    self.isShowFilter = !self.isShowFilter;
+    if (self.isShowFilter) {
+        [self showFilterViewController];
+    } else {
+        [self hideFilterViewController];
+    }
+}
+
+- (void)showFilterViewController {
+    self.filterViewController = [[PayMapFilterViewController alloc] initWithPaymentMethodFilter:self.filter];
+    self.filterViewController.view.frame = self.view.bounds;
+    [self.view addSubview:self.filterViewController.view];
+    [self addChildViewController:self.filterViewController];
+}
+
+- (void)hideFilterViewController {
+    [self.filterViewController.view removeFromSuperview];
+    [self.filterViewController removeFromParentViewController];
+    self.filterViewController = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                                          target:self
+                                                                                          action:@selector(didTapFilterButton:)];
+
+    self.filter = [[PaymentMethodFilter alloc] init];
     [self updateLocation];
 }
 
