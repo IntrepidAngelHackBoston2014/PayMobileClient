@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70A056501943CDF600D73E6C /* bitcoin_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056491943CDF600D73E6C /* bitcoin_pin_144.png */; };
+		70A056511943CDF600D73E6C /* cfarms_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0564A1943CDF600D73E6C /* cfarms_pin_144.png */; };
+		70A056521943CDF600D73E6C /* dunkin_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0564B1943CDF600D73E6C /* dunkin_pin_144.png */; };
+		70A056531943CDF600D73E6C /* leaf_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0564C1943CDF600D73E6C /* leaf_pin_144.png */; };
+		70A056541943CDF600D73E6C /* levelup_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0564D1943CDF600D73E6C /* levelup_pin_144.png */; };
+		70A056551943CDF600D73E6C /* paypal_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0564E1943CDF600D73E6C /* paypal_pin_144.png */; };
+		70A056561943CDF600D73E6C /* starbucks_pin_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0564F1943CDF600D73E6C /* starbucks_pin_144.png */; };
+		70A0565E1943D05F00D73E6C /* bitcoin_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056571943D05F00D73E6C /* bitcoin_color_144.png */; };
+		70A0565F1943D05F00D73E6C /* cfarms_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056581943D05F00D73E6C /* cfarms_color_144.png */; };
+		70A056601943D05F00D73E6C /* dunkin_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056591943D05F00D73E6C /* dunkin_color_144.png */; };
+		70A056611943D05F00D73E6C /* leaf_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0565A1943D05F00D73E6C /* leaf_color_144.png */; };
+		70A056621943D05F00D73E6C /* levelup_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0565B1943D05F00D73E6C /* levelup_color_144.png */; };
+		70A056631943D05F00D73E6C /* paypal_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0565C1943D05F00D73E6C /* paypal_color_144.png */; };
+		70A056641943D05F00D73E6C /* starbucks_color_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0565D1943D05F00D73E6C /* starbucks_color_144.png */; };
+		70A0566C1943D07500D73E6C /* bitcoin_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056651943D07500D73E6C /* bitcoin_grey_144.png */; };
+		70A0566D1943D07500D73E6C /* cfarms_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056661943D07500D73E6C /* cfarms_grey_144.png */; };
+		70A0566E1943D07500D73E6C /* dunkin_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056671943D07500D73E6C /* dunkin_grey_144.png */; };
+		70A0566F1943D07500D73E6C /* leaf_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056681943D07500D73E6C /* leaf_grey_144.png */; };
+		70A056701943D07500D73E6C /* levelup_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056691943D07500D73E6C /* levelup_grey_144.png */; };
+		70A056711943D07500D73E6C /* paypal_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0566A1943D07500D73E6C /* paypal_grey_144.png */; };
+		70A056721943D07500D73E6C /* starbucks_grey_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0566B1943D07500D73E6C /* starbucks_grey_144.png */; };
 		A865100E951C4338AFB2EAC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C6D960DCF846EFAAE1E9D9 /* libPods.a */; };
 		E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69ACB0F19438500009290F2 /* PayMapViewController.m */; };
 		E69ACB1219438589009290F2 /* PayMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69ACB1119438589009290F2 /* PayMapViewController.xib */; };
@@ -48,6 +69,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70A056491943CDF600D73E6C /* bitcoin_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin_pin_144.png; sourceTree = "<group>"; };
+		70A0564A1943CDF600D73E6C /* cfarms_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cfarms_pin_144.png; sourceTree = "<group>"; };
+		70A0564B1943CDF600D73E6C /* dunkin_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dunkin_pin_144.png; sourceTree = "<group>"; };
+		70A0564C1943CDF600D73E6C /* leaf_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf_pin_144.png; sourceTree = "<group>"; };
+		70A0564D1943CDF600D73E6C /* levelup_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelup_pin_144.png; sourceTree = "<group>"; };
+		70A0564E1943CDF600D73E6C /* paypal_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal_pin_144.png; sourceTree = "<group>"; };
+		70A0564F1943CDF600D73E6C /* starbucks_pin_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starbucks_pin_144.png; sourceTree = "<group>"; };
+		70A056571943D05F00D73E6C /* bitcoin_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin_color_144.png; sourceTree = "<group>"; };
+		70A056581943D05F00D73E6C /* cfarms_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cfarms_color_144.png; sourceTree = "<group>"; };
+		70A056591943D05F00D73E6C /* dunkin_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dunkin_color_144.png; sourceTree = "<group>"; };
+		70A0565A1943D05F00D73E6C /* leaf_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf_color_144.png; sourceTree = "<group>"; };
+		70A0565B1943D05F00D73E6C /* levelup_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelup_color_144.png; sourceTree = "<group>"; };
+		70A0565C1943D05F00D73E6C /* paypal_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal_color_144.png; sourceTree = "<group>"; };
+		70A0565D1943D05F00D73E6C /* starbucks_color_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starbucks_color_144.png; sourceTree = "<group>"; };
+		70A056651943D07500D73E6C /* bitcoin_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin_grey_144.png; sourceTree = "<group>"; };
+		70A056661943D07500D73E6C /* cfarms_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cfarms_grey_144.png; sourceTree = "<group>"; };
+		70A056671943D07500D73E6C /* dunkin_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dunkin_grey_144.png; sourceTree = "<group>"; };
+		70A056681943D07500D73E6C /* leaf_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf_grey_144.png; sourceTree = "<group>"; };
+		70A056691943D07500D73E6C /* levelup_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelup_grey_144.png; sourceTree = "<group>"; };
+		70A0566A1943D07500D73E6C /* paypal_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal_grey_144.png; sourceTree = "<group>"; };
+		70A0566B1943D07500D73E6C /* starbucks_grey_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starbucks_grey_144.png; sourceTree = "<group>"; };
 		C393318B8F5F4054BAFF95DF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D2C6D960DCF846EFAAE1E9D9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69ACB0E19438500009290F2 /* PayMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMapViewController.h; sourceTree = "<group>"; };
@@ -122,6 +164,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70A056481943CDB700D73E6C /* SlicedAssets */ = {
+			isa = PBXGroup;
+			children = (
+				70A056651943D07500D73E6C /* bitcoin_grey_144.png */,
+				70A056661943D07500D73E6C /* cfarms_grey_144.png */,
+				70A056671943D07500D73E6C /* dunkin_grey_144.png */,
+				70A056681943D07500D73E6C /* leaf_grey_144.png */,
+				70A056691943D07500D73E6C /* levelup_grey_144.png */,
+				70A0566A1943D07500D73E6C /* paypal_grey_144.png */,
+				70A0566B1943D07500D73E6C /* starbucks_grey_144.png */,
+				70A056571943D05F00D73E6C /* bitcoin_color_144.png */,
+				70A056581943D05F00D73E6C /* cfarms_color_144.png */,
+				70A056591943D05F00D73E6C /* dunkin_color_144.png */,
+				70A0565A1943D05F00D73E6C /* leaf_color_144.png */,
+				70A0565B1943D05F00D73E6C /* levelup_color_144.png */,
+				70A0565C1943D05F00D73E6C /* paypal_color_144.png */,
+				70A0565D1943D05F00D73E6C /* starbucks_color_144.png */,
+				70A056491943CDF600D73E6C /* bitcoin_pin_144.png */,
+				70A0564A1943CDF600D73E6C /* cfarms_pin_144.png */,
+				70A0564B1943CDF600D73E6C /* dunkin_pin_144.png */,
+				70A0564C1943CDF600D73E6C /* leaf_pin_144.png */,
+				70A0564D1943CDF600D73E6C /* levelup_pin_144.png */,
+				70A0564E1943CDF600D73E6C /* paypal_pin_144.png */,
+				70A0564F1943CDF600D73E6C /* starbucks_pin_144.png */,
+			);
+			name = SlicedAssets;
+			sourceTree = "<group>";
+		};
 		E6AC2B5F194380610082EA7F = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +232,7 @@
 		E6AC2B71194380610082EA7F /* PayMobileClient */ = {
 			isa = PBXGroup;
 			children = (
+				70A056481943CDB700D73E6C /* SlicedAssets */,
 				E69ACB2B1943AE4B009290F2 /* IPLCommonMacros.h */,
 				E6AC2B7A194380610082EA7F /* AppDelegate.h */,
 				E6AC2B7B194380610082EA7F /* AppDelegate.m */,
@@ -296,9 +367,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E69ACB291943A47E009290F2 /* PayMapFilterViewController.xib in Resources */,
+				70A056531943CDF600D73E6C /* leaf_pin_144.png in Resources */,
+				70A056631943D05F00D73E6C /* paypal_color_144.png in Resources */,
 				E69ACB1219438589009290F2 /* PayMapViewController.xib in Resources */,
 				E6AC2B76194380610082EA7F /* InfoPlist.strings in Resources */,
+				70A056521943CDF600D73E6C /* dunkin_pin_144.png in Resources */,
+				70A0566E1943D07500D73E6C /* dunkin_grey_144.png in Resources */,
+				70A056561943CDF600D73E6C /* starbucks_pin_144.png in Resources */,
+				70A0566C1943D07500D73E6C /* bitcoin_grey_144.png in Resources */,
+				70A0565F1943D05F00D73E6C /* cfarms_color_144.png in Resources */,
+				70A056511943CDF600D73E6C /* cfarms_pin_144.png in Resources */,
+				70A056721943D07500D73E6C /* starbucks_grey_144.png in Resources */,
+				70A056551943CDF600D73E6C /* paypal_pin_144.png in Resources */,
+				70A056541943CDF600D73E6C /* levelup_pin_144.png in Resources */,
+				70A056601943D05F00D73E6C /* dunkin_color_144.png in Resources */,
+				70A056621943D05F00D73E6C /* levelup_color_144.png in Resources */,
 				E6AC2B7E194380610082EA7F /* Images.xcassets in Resources */,
+				70A056641943D05F00D73E6C /* starbucks_color_144.png in Resources */,
+				70A0566D1943D07500D73E6C /* cfarms_grey_144.png in Resources */,
+				70A056701943D07500D73E6C /* levelup_grey_144.png in Resources */,
+				70A056711943D07500D73E6C /* paypal_grey_144.png in Resources */,
+				70A0565E1943D05F00D73E6C /* bitcoin_color_144.png in Resources */,
+				70A056611943D05F00D73E6C /* leaf_color_144.png in Resources */,
+				70A0566F1943D07500D73E6C /* leaf_grey_144.png in Resources */,
+				70A056501943CDF600D73E6C /* bitcoin_pin_144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
