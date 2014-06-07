@@ -31,7 +31,21 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-
+        self.retailerId = [dictionary objectForKey:(@"id")];
+        self.storeNumber = [dictionary objectForKey:(@"store_number")];
+        self.name = [dictionary objectForKey:(@"name")];
+        self.address = [dictionary objectForKey:(@"address")];
+        self.city = [dictionary objectForKey:(@"city")];
+        self.state = [dictionary objectForKey:(@"state")];
+        self.zipCode = [dictionary objectForKey:(@"zip_code")];
+        self.phoneNumber = [dictionary objectForKey:(@"phone_number")];
+        self.faxNumber = [dictionary objectForKey:(@"fax_number")];
+        self.storeHours = [dictionary objectForKey:(@"store_hours")];
+        self.paymentServiceCode = [dictionary objectForKey:(@"payment_service_code")];
+        self.services = [dictionary objectForKey:(@"services")];
+        self.location = [[CLLocation alloc] initWithLatitude:[[dictionary objectForKey:(@"latitude")] floatValue]
+                                                   longitude:[[dictionary objectForKey:(@"longitude")] floatValue]];
+        
     }
     return self;
 }
