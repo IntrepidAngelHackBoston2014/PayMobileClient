@@ -12,5 +12,7 @@
 @interface PayImages : NSObject
 
 + (UIImage *)iconImageWithPaymentType:(PaymentType)paymentType;
++ (UIImage *)greyIconImageWithPaymentType:(PaymentType)paymentType;
++ (UIImage *)pinImageWithPaymentType:(PaymentType)paymentType;
 
 @end
