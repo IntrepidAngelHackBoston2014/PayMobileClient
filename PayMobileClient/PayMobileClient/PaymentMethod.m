@@ -37,6 +37,18 @@
 
 - (NSString *)customURLScheme {
     switch (self.type) {
+        case PaymentTypeStarbucks:
+            return @"sbux331177714//";
+            break;
+        case PaymentTypeDunkinDonuts:
+            return @"dunkindonuts://";
+            break;
+        case PaymentTypeLevelUp:
+            return @"thelevelup://";
+            break;
+        case PaymentTypePayPal:
+            return @"ppmobile://";
+            break;
         default:
             return @"Unknown";
     }
@@ -44,6 +56,21 @@
 
 - (NSString *)appStoreURLString {
     switch (self.type) {
+        case PaymentTypeStarbucks:
+            return @"https://itunes.apple.com/us/app/starbucks/id331177714?mt=8";
+            break;
+        case PaymentTypeDunkinDonuts:
+            return @"https://itunes.apple.com/us/app/dunkin-donuts/id552020897?mt=8";
+            break;
+        case PaymentTypeLevelUp:
+            return @"https://itunes.apple.com/us/app/levelup-.-pay-with-your-phone/id424121785?mt=8";
+            break;
+        case PaymentTypePayPal:
+            return @"https://itunes.apple.com/us/app/paypal/id283646709?mt=8";
+            break;
+        case PaymentTypeCumberlandFarms:
+            return @"https://itunes.apple.com/us/app/cumberland-farms-smartpay/id509328660?mt=8";
+            break;
         default:
             return @"Unknown";
     }
