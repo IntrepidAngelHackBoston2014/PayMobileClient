@@ -34,6 +34,7 @@
 		E6AC2B8F194380610082EA7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2B8D194380610082EA7F /* InfoPlist.strings */; };
 		E6AC2B91194380610082EA7F /* PayMobileClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2B90194380610082EA7F /* PayMobileClientTests.m */; };
 		E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D7FB1943B8A000845E23 /* Retailer.m */; };
+		E6F0D7FF1943BD8600845E23 /* FilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		E6AC2B90194380610082EA7F /* PayMobileClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayMobileClientTests.m; sourceTree = "<group>"; };
 		E6F0D7FA1943B8A000845E23 /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
 		E6F0D7FB1943B8A000845E23 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
+		E6F0D7FD1943BD8600845E23 /* FilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewCell.h; sourceTree = "<group>"; };
+		E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				E69ACB1F19439D0D009290F2 /* PayMapFilterViewController.h */,
 				E69ACB2019439D0D009290F2 /* PayMapFilterViewController.m */,
 				E69ACB281943A47E009290F2 /* PayMapFilterViewController.xib */,
+				E6F0D7FD1943BD8600845E23 /* FilterTableViewCell.h */,
+				E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */,
 				E69ACB2219439DB8009290F2 /* PaymentMethodStore.h */,
 				E69ACB2319439DB8009290F2 /* PaymentMethodStore.m */,
 				E69ACB19194395ED009290F2 /* PaymentMethod.h */,
@@ -350,6 +355,7 @@
 				E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */,
 				E69ACB2419439DB8009290F2 /* PaymentMethodStore.m in Sources */,
 				E69ACB2119439D0D009290F2 /* PayMapFilterViewController.m in Sources */,
+				E6F0D7FF1943BD8600845E23 /* FilterTableViewCell.m in Sources */,
 				E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */,
 				E69ACB271943A133009290F2 /* PaymentMethodFilter.m in Sources */,
 				E69ACB1E194399FC009290F2 /* PayImages.m in Sources */,

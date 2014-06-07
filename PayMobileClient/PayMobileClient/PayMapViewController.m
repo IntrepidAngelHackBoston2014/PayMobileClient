@@ -11,7 +11,7 @@
 #import "PaymentMethodFilter.h"
 #import "Retailer.h"
 
-@interface PayMapViewController () <CLLocationManagerDelegate>
+@interface PayMapViewController () <CLLocationManagerDelegate, PayMapFilterViewControllerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
@@ -37,6 +37,7 @@
 
 - (void)showFilterViewController {
     self.filterViewController = [[PayMapFilterViewController alloc] initWithPaymentMethodFilter:self.filter];
+    self.filterViewController.delegate = self;
     self.filterViewController.view.frame = self.view.bounds;
     [self.view addSubview:self.filterViewController.view];
     [self addChildViewController:self.filterViewController];
@@ -105,6 +106,21 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"%@", error);
+}
+
+#pragma mark - PayMapFilterViewControllerDelegate methods
+
+- (void)filterViewController:(PayMapFilterViewController *)viewController didSelectPaymentMethod:(PaymentMethod *)paymentMethod {
+    //update showing pins
+}
+
+- (void)filterViewController:(PayMapFilterViewController *)viewController didDeselectPaymentMethod:(PaymentMethod *)paymentMethod {
+    //update showing pins
+}
+
+- (void)didCloseFilterViewController:(PayMapFilterViewController *)viewController {
+    self.isShowFilter = NO;
+    [self hideFilterViewController];
 }
 
 @end
