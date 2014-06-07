@@ -13,6 +13,7 @@
 
 @interface PayMapFilterViewController : UIViewController
 
+@property (nonatomic, weak) id<PayMapFilterViewControllerDelegate> delegate;
 @property (nonatomic, strong) PaymentMethodFilter *methodFilter;
 
 - (id)initWithPaymentMethodFilter:(PaymentMethodFilter *)methodFilter;
@@ -20,8 +21,6 @@
 @end
 
 @protocol PayMapFilterViewControllerDelegate <NSObject>
-
-- (id)initWithPaymentMethodFilter:(PaymentMethodFilter *)methodFilter;
 
 - (void)filterViewController:(PayMapFilterViewController *)viewController didSelectPaymentMethod:(PaymentMethod *)paymentMethod;
 - (void)filterViewController:(PayMapFilterViewController *)viewController didDeselectPaymentMethod:(PaymentMethod *)paymentMethod;
