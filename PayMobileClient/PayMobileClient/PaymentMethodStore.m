@@ -51,4 +51,13 @@
     return nil;
 }
 
+- (PaymentMethod *)paymentMethodWithTypeString:(NSString *)typeString {
+    for (PaymentMethod *method in self.paymentMethods) {
+        if ([method.typeString isEqual:typeString]) {
+            return method;
+        }
+    }
+    return nil;
+}
+
 @end

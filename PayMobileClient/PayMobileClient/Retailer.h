@@ -45,4 +45,6 @@ typedef void (^RetailerRequestFailure)(AFHTTPRequestOperation *operation, NSErro
 @property (strong, nonatomic) NSString *paymentServiceCode;
 @property (assign, nonatomic) CLLocationCoordinate2D coordinate;
 
+- (PaymentMethod *)primaryPaymentMethod;
+
 @end

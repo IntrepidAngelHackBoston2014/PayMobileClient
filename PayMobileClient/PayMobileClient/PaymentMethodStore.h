@@ -15,5 +15,6 @@
 
 - (NSArray *)paymentMethods;
 - (PaymentMethod *)paymentMethodWithType:(PaymentType)type;
+- (PaymentMethod *)paymentMethodWithTypeString:(NSString *)typeString;
 
 @end

@@ -9,7 +9,6 @@
 #import "PayMapAnnotation.h"
 
 @interface PayMapAnnotation ()
-@property (nonatomic, strong) Retailer *retailer;
 @end
 
 @implementation PayMapAnnotation

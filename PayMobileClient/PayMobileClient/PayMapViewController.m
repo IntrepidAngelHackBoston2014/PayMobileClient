@@ -12,6 +12,7 @@
 #import "PaymentMethodStore.h"
 #import "Retailer.h"
 #import "PayMapAnnotation.h"
+#import "RetailerAnnotationView.h"
 
 @interface PayMapViewController () <CLLocationManagerDelegate, PayMapFilterViewControllerDelegate, MKMapViewDelegate>
 
@@ -129,6 +130,21 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+
+    static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    RetailerAnnotationView *annotationView = (RetailerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+    if (!annotationView) {
+        annotationView = [[RetailerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+    }
+
+    [annotationView setupWithRetailer:((PayMapAnnotation *)annotation).retailer];
+
+    return annotationView;
 }
 
 #pragma mark - PayMapFilterViewControllerDelegate methods

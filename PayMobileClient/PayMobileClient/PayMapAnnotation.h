@@ -11,6 +11,8 @@
 
 @interface PayMapAnnotation : NSObject <MKAnnotation>
 
+@property (nonatomic, strong) Retailer *retailer;
+
 - (id)initWithRetailer:(Retailer *)retailer;
 
 @end

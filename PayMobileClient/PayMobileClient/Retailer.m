@@ -7,6 +7,7 @@
 //
 
 #import "Retailer.h"
+#import "PaymentMethodStore.h"
 
 @implementation Retailer
 
@@ -101,5 +102,14 @@
     }
     return self;
 }
+
+- (PaymentMethod *)primaryPaymentMethod {
+    NSArray *components = [self.paymentServiceCode componentsSeparatedByString:@","];
+    if (components.count > 0) {
+        return [[PaymentMethodStore sharedStore] paymentMethodWithTypeString:components[0]];
+    }
+    return nil;
+}
+
 
 @end
