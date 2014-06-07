@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A865100E951C4338AFB2EAC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C6D960DCF846EFAAE1E9D9 /* libPods.a */; };
+		E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69ACB0F19438500009290F2 /* PayMapViewController.m */; };
+		E69ACB1219438589009290F2 /* PayMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69ACB1119438589009290F2 /* PayMapViewController.xib */; };
+		E69ACB141943861C009290F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69ACB131943861C009290F2 /* SystemConfiguration.framework */; };
+		E69ACB1619438623009290F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69ACB1519438623009290F2 /* QuartzCore.framework */; };
+		E69ACB1819438629009290F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69ACB1719438629009290F2 /* MapKit.framework */; };
 		E6AC2B6C194380610082EA7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AC2B6B194380610082EA7F /* Foundation.framework */; };
 		E6AC2B6E194380610082EA7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AC2B6D194380610082EA7F /* CoreGraphics.framework */; };
 		E6AC2B70194380610082EA7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AC2B6F194380610082EA7F /* UIKit.framework */; };
@@ -35,6 +40,12 @@
 /* Begin PBXFileReference section */
 		C393318B8F5F4054BAFF95DF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D2C6D960DCF846EFAAE1E9D9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69ACB0E19438500009290F2 /* PayMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMapViewController.h; sourceTree = "<group>"; };
+		E69ACB0F19438500009290F2 /* PayMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMapViewController.m; sourceTree = "<group>"; };
+		E69ACB1119438589009290F2 /* PayMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayMapViewController.xib; sourceTree = "<group>"; };
+		E69ACB131943861C009290F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E69ACB1519438623009290F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E69ACB1719438629009290F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E6AC2B68194380610082EA7F /* PayMobileClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMobileClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AC2B6B194380610082EA7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6AC2B6D194380610082EA7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69ACB1819438629009290F2 /* MapKit.framework in Frameworks */,
+				E69ACB1619438623009290F2 /* QuartzCore.framework in Frameworks */,
+				E69ACB141943861C009290F2 /* SystemConfiguration.framework in Frameworks */,
 				E6AC2B6E194380610082EA7F /* CoreGraphics.framework in Frameworks */,
 				E6AC2B70194380610082EA7F /* UIKit.framework in Frameworks */,
 				E6AC2B6C194380610082EA7F /* Foundation.framework in Frameworks */,
@@ -101,6 +115,9 @@
 		E6AC2B6A194380610082EA7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E69ACB1719438629009290F2 /* MapKit.framework */,
+				E69ACB1519438623009290F2 /* QuartzCore.framework */,
+				E69ACB131943861C009290F2 /* SystemConfiguration.framework */,
 				E6AC2B6B194380610082EA7F /* Foundation.framework */,
 				E6AC2B6D194380610082EA7F /* CoreGraphics.framework */,
 				E6AC2B6F194380610082EA7F /* UIKit.framework */,
@@ -117,6 +134,9 @@
 				E6AC2B7B194380610082EA7F /* AppDelegate.m */,
 				E6AC2B7D194380610082EA7F /* Images.xcassets */,
 				E6AC2B72194380610082EA7F /* Supporting Files */,
+				E69ACB0E19438500009290F2 /* PayMapViewController.h */,
+				E69ACB0F19438500009290F2 /* PayMapViewController.m */,
+				E69ACB1119438589009290F2 /* PayMapViewController.xib */,
 			);
 			path = PayMobileClient;
 			sourceTree = "<group>";
@@ -227,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69ACB1219438589009290F2 /* PayMapViewController.xib in Resources */,
 				E6AC2B76194380610082EA7F /* InfoPlist.strings in Resources */,
 				E6AC2B7E194380610082EA7F /* Images.xcassets in Resources */,
 			);
@@ -281,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6AC2B7C194380610082EA7F /* AppDelegate.m in Sources */,
+				E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */,
 				E6AC2B78194380610082EA7F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +424,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PayMobileClient/PayMobileClient-Prefix.pch";
 				INFOPLIST_FILE = "PayMobileClient/PayMobileClient-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -416,6 +439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PayMobileClient/PayMobileClient-Prefix.pch";
 				INFOPLIST_FILE = "PayMobileClient/PayMobileClient-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
