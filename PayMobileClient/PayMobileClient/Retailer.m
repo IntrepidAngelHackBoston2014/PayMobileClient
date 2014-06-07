@@ -10,9 +10,33 @@
 
 @implementation Retailer
 
-+ (void) getMockRetailersWithSuccess:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
+#pragma mark - GET Methods
+
++ (NSDictionary *)getRetailerParametersWithFilter:(PaymentMethodFilter *)filter
+                                       coordinate:(CLLocationCoordinate2D)coordinate
+                                           radius:(float)radius {
+    NSMutableDictionary *ret = [NSMutableDictionary dictionary];
+    if (filter) {
+        NSMutableArray *codes = [NSMutableArray array];
+        for (PaymentMethod *method in filter.selectedMethods) {
+            [codes addObject:method.typeString];
+        }
+        ret[@"codes"] = [codes componentsJoinedByString:@","];
+    }
+    if (CLLocationCoordinate2DIsValid(coordinate)) {
+        ret[@"lat"] = [NSNumber numberWithDouble:coordinate.latitude];
+        ret[@"lon"] = [NSNumber numberWithDouble:coordinate.longitude];
+    }
+    if (radius > 0) {
+        ret[@"distance"] = [NSNumber numberWithFloat:radius];
+    }
+    return ret;
+}
+
+
++ (void)getRetailersWithParameters:(id)parameters success:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://pay-backend-staging.herokuapp.com/retailers.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://pay-backend-staging.herokuapp.com/retailers.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *retailerDictionaries = [responseObject objectForKey:@"retailers"];
         NSMutableArray *retailers = [NSMutableArray array];
         for (NSDictionary *detailDictionary in retailerDictionaries) {
@@ -27,6 +51,36 @@
         }
     }];
 }
+
++ (void)getRetailersWithParameters:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
+    [self getRetailersWithParameters:nil success:success failure:failure];
+}
+
++ (void)getRetailersWithFilter:(PaymentMethodFilter *)filter
+                    coordinate:(CLLocationCoordinate2D)coordinate
+                        radius:(float)radius
+                       success:(RetailerRequestSuccess)success
+                       failure:(RetailerRequestFailure)failure {
+    NSDictionary *parameters = [self getRetailerParametersWithFilter:filter coordinate:coordinate radius:radius];
+    [self getRetailersWithParameters:parameters success:success failure:failure];
+}
+
++ (void)getRetailersWithFilter:(PaymentMethodFilter *)filter
+                        radius:(float)radius
+                       success:(RetailerRequestSuccess)success
+                       failure:(RetailerRequestFailure)failure {
+    NSDictionary *parameters = [self getRetailerParametersWithFilter:filter coordinate:kCLLocationCoordinate2DInvalid radius:radius];
+    [self getRetailersWithParameters:parameters success:success failure:failure];
+}
+
++ (void)getRetailersWithFilter:(PaymentMethodFilter *)filter
+                       success:(RetailerRequestSuccess)success
+                       failure:(RetailerRequestFailure)failure {
+    NSDictionary *parameters = [self getRetailerParametersWithFilter:filter coordinate:kCLLocationCoordinate2DInvalid radius:0];
+    [self getRetailersWithParameters:parameters success:success failure:failure];
+}
+
+#pragma mark - Instance Methods
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
@@ -43,9 +97,7 @@
         self.storeHours = [dictionary objectForKey:(@"store_hours")];
         self.paymentServiceCode = [dictionary objectForKey:(@"payment_service_code")];
         self.services = [dictionary objectForKey:(@"services")];
-        self.location = [[CLLocation alloc] initWithLatitude:[[dictionary objectForKey:(@"latitude")] floatValue]
-                                                   longitude:[[dictionary objectForKey:(@"longitude")] floatValue]];
-        
+        self.coordinate = CLLocationCoordinate2DMake([[dictionary objectForKey:(@"latitude")] floatValue], [[dictionary objectForKey:(@"longitude")] floatValue]);
     }
     return self;
 }

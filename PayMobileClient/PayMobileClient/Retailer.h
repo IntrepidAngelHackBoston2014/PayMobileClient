@@ -7,13 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PaymentMethodFilter.h"
 
 typedef void (^RetailerRequestSuccess)(AFHTTPRequestOperation *operation, NSArray *retailers);
 typedef void (^RetailerRequestFailure)(AFHTTPRequestOperation *operation, NSError *error);
 
 @interface Retailer : NSObject
 
-+ (void) getMockRetailersWithSuccess:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure;
++ (void)getMockRetailersWithSuccess:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure;
+
++ (void)getRetailersWithFilter:(PaymentMethodFilter *)filter
+                    coordinate:(CLLocationCoordinate2D)coordinate
+                        radius:(float)radius
+                       success:(RetailerRequestSuccess)success
+                       failure:(RetailerRequestFailure)failure;
+
++ (void)getRetailersWithFilter:(PaymentMethodFilter *)filter
+                        radius:(float)radius
+                       success:(RetailerRequestSuccess)success
+                       failure:(RetailerRequestFailure)failure;
+
++ (void)getRetailersWithFilter:(PaymentMethodFilter *)filter
+                       success:(RetailerRequestSuccess)success
+                       failure:(RetailerRequestFailure)failure;
 
 @property (strong, nonatomic) NSNumber *retailerId;
 @property (strong, nonatomic) NSString *storeNumber;
@@ -27,6 +43,6 @@ typedef void (^RetailerRequestFailure)(AFHTTPRequestOperation *operation, NSErro
 @property (strong, nonatomic) NSString *storeHours;
 @property (strong, nonatomic) NSArray *services;
 @property (strong, nonatomic) NSString *paymentServiceCode;
-@property (strong, nonatomic) CLLocation *location;
+@property (assign, nonatomic) CLLocationCoordinate2D coordinate;
 
 @end

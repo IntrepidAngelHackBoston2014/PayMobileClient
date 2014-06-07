@@ -29,6 +29,7 @@ typedef enum {
 @interface PaymentMethod : NSObject
 
 @property (readonly, nonatomic) PaymentType type;
+@property (readonly, nonatomic) NSString *typeString;
 @property (readonly, nonatomic) NSString *displayName;
 @property (readonly, nonatomic) NSString *customURLScheme;
 @property (readonly, nonatomic) NSString *appStoreURLString;

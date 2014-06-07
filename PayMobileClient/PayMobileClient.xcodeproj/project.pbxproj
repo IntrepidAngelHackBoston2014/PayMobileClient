@@ -35,6 +35,7 @@
 		E6AC2B91194380610082EA7F /* PayMobileClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2B90194380610082EA7F /* PayMobileClientTests.m */; };
 		E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D7FB1943B8A000845E23 /* Retailer.m */; };
 		E6F0D7FF1943BD8600845E23 /* FilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */; };
+		E6F0D8021943CD0C00845E23 /* PayMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D8011943CD0C00845E23 /* PayMapAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		E6F0D7FB1943B8A000845E23 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		E6F0D7FD1943BD8600845E23 /* FilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewCell.h; sourceTree = "<group>"; };
 		E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewCell.m; sourceTree = "<group>"; };
+		E6F0D8001943CD0C00845E23 /* PayMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMapAnnotation.h; sourceTree = "<group>"; };
+		E6F0D8011943CD0C00845E23 /* PayMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMapAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				E69ACB1F19439D0D009290F2 /* PayMapFilterViewController.h */,
 				E69ACB2019439D0D009290F2 /* PayMapFilterViewController.m */,
 				E69ACB281943A47E009290F2 /* PayMapFilterViewController.xib */,
+				E6F0D8001943CD0C00845E23 /* PayMapAnnotation.h */,
+				E6F0D8011943CD0C00845E23 /* PayMapAnnotation.m */,
 				E6F0D7FD1943BD8600845E23 /* FilterTableViewCell.h */,
 				E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */,
 				E69ACB2219439DB8009290F2 /* PaymentMethodStore.h */,
@@ -357,6 +362,7 @@
 				E69ACB2119439D0D009290F2 /* PayMapFilterViewController.m in Sources */,
 				E6F0D7FF1943BD8600845E23 /* FilterTableViewCell.m in Sources */,
 				E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */,
+				E6F0D8021943CD0C00845E23 /* PayMapAnnotation.m in Sources */,
 				E69ACB271943A133009290F2 /* PaymentMethodFilter.m in Sources */,
 				E69ACB1E194399FC009290F2 /* PayImages.m in Sources */,
 				E6AC2B78194380610082EA7F /* main.m in Sources */,

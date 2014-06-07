@@ -45,6 +45,37 @@
     return self;
 }
 
+- (NSString *)typeString {
+    switch (self.type) {
+        case PaymentTypeStarbucks:
+            return @"sbux";
+            break;
+        case PaymentTypeDunkinDonuts:
+            return @"dnkn";
+            break;
+        case PaymentTypeLevelUp:
+            return @"lvup";
+            break;
+        case PaymentTypePayPal:
+            return @"ppal";
+            break;
+        case PaymentTypeCumberlandFarms:
+            return @"cfrm";
+            break;
+        case PaymentTypeLeaf:
+            return @"leaf";
+            break;
+        case PaymentTypeBitCoin:
+            return @"coin";
+            break;
+        case PaymentTypeBitPay:
+            return @"bpay";
+            break;
+        default:
+            return @"Unknown";
+    }
+}
+
 - (NSString *)displayName {
     switch (self.type) {
         case PaymentTypeStarbucks:

@@ -9,14 +9,16 @@
 #import "PayMapViewController.h"
 #import "PayMapFilterViewController.h"
 #import "PaymentMethodFilter.h"
+#import "PaymentMethodStore.h"
 #import "Retailer.h"
+#import "PayMapAnnotation.h"
 
-@interface PayMapViewController () <CLLocationManagerDelegate, PayMapFilterViewControllerDelegate>
+@interface PayMapViewController () <CLLocationManagerDelegate, PayMapFilterViewControllerDelegate, MKMapViewDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (weak, nonatomic) IBOutlet MKMapView *payMapView;
-
+@property (strong, nonatomic) NSArray *retailers;
 
 @property (strong, nonatomic) PaymentMethodFilter *filter;
 @property (assign, nonatomic) BOOL isShowFilter;
@@ -59,6 +61,10 @@
                                                                                           action:@selector(didTapFilterButton:)];
 
     self.filter = [[PaymentMethodFilter alloc] init];
+    for (PaymentMethod *method in [[PaymentMethodStore sharedStore] paymentMethods]) {
+        [self.filter addMethod:method];
+    }
+
     [self updateLocation];
 }
 
@@ -86,19 +92,30 @@
     [self.payMapView setRegion:region animated:YES];
 }
 
-- (void)fetchVenuesForLocation:(CLLocation *)location {
-    [Retailer getMockRetailersWithSuccess:^(AFHTTPRequestOperation *operation, NSArray *retailers) {
-        NSLog(@"%@", retailers);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+- (void)fetchRetailersForCoordinate:(CLLocationCoordinate2D)coordinate {
+    [Retailer getRetailersWithFilter:self.filter coordinate:coordinate
+                              radius:[self getRadius]
+                             success:^(AFHTTPRequestOperation *operation, NSArray *retailers) {
+                                 self.retailers = retailers;
+                                 [self updateAnnotations];
+    }
+                             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)updateAnnotations {
+    for (Retailer *retailer in self.retailers) {
+        PayMapAnnotation *annotation = [[PayMapAnnotation alloc] initWithRetailer:retailer];
+        [self.payMapView addAnnotation:annotation];
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations lastObject];
-    [self fetchVenuesForLocation:location];
+    [self fetchRetailersForCoordinate:location.coordinate];
     [self zoomToLocation:location radius:2000];
 
     [self.locationManager stopUpdatingLocation];
@@ -108,19 +125,31 @@
     NSLog(@"%@", error);
 }
 
+#pragma mark - MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
+}
+
 #pragma mark - PayMapFilterViewControllerDelegate methods
 
 - (void)filterViewController:(PayMapFilterViewController *)viewController didSelectPaymentMethod:(PaymentMethod *)paymentMethod {
-    //update showing pins
+    [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
 }
 
 - (void)filterViewController:(PayMapFilterViewController *)viewController didDeselectPaymentMethod:(PaymentMethod *)paymentMethod {
-    //update showing pins
+    [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
 }
 
 - (void)didCloseFilterViewController:(PayMapFilterViewController *)viewController {
     self.isShowFilter = NO;
     [self hideFilterViewController];
+}
+
+#pragma mark - 
+
+- (CLLocationDistance)getRadius {
+    return 2;
 }
 
 @end
