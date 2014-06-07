@@ -17,10 +17,8 @@
 @interface PayMapViewController () <CLLocationManagerDelegate, PayMapFilterViewControllerDelegate, MKMapViewDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-
 @property (weak, nonatomic) IBOutlet MKMapView *payMapView;
 @property (strong, nonatomic) NSArray *retailers;
-
 @property (strong, nonatomic) PaymentMethodFilter *filter;
 @property (assign, nonatomic) BOOL isShowFilter;
 @property (strong, nonatomic) PayMapFilterViewController *filterViewController;
@@ -165,7 +163,10 @@
 #pragma mark - 
 
 - (CLLocationDistance)getRadius {
-    return 2;
+    MKMapRect mRect = self.payMapView.visibleMapRect;
+    MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMidY(mRect));
+    MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMaxY(mRect));
+    return MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34;
 }
 
 @end
