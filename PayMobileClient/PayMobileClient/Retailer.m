@@ -43,8 +43,8 @@
         self.storeHours = [dictionary objectForKey:(@"store_hours")];
         self.paymentServiceCode = [dictionary objectForKey:(@"payment_service_code")];
         self.services = [dictionary objectForKey:(@"services")];
-        self.location = [[CLLocation alloc] initWithLatitude:[[dictionary objectForKey:(@"latitude")] floatValue]
-                                                   longitude:[[dictionary objectForKey:(@"longitude")] floatValue]];
+        self.location = CLLocationCoordinate2DMake([[dictionary objectForKey:(@"latitude")] floatValue],
+                                                    [[dictionary objectForKey:(@"longitude")] floatValue]);
         
     }
     return self;

@@ -27,6 +27,6 @@ typedef void (^RetailerRequestFailure)(AFHTTPRequestOperation *operation, NSErro
 @property (strong, nonatomic) NSString *storeHours;
 @property (strong, nonatomic) NSArray *services;
 @property (strong, nonatomic) NSString *paymentServiceCode;
-@property (strong, nonatomic) CLLocation *location;
+@property (assign, nonatomic) CLLocationCoordinate2D location;
 
 @end
