@@ -9,6 +9,7 @@
 #import "PayMapViewController.h"
 #import "PayMapFilterViewController.h"
 #import "PaymentMethodFilter.h"
+#import "Retailer.h"
 
 @interface PayMapViewController () <CLLocationManagerDelegate>
 
@@ -85,7 +86,11 @@
 }
 
 - (void)fetchVenuesForLocation:(CLLocation *)location {
-    //TODO: Show Venues
+    [Retailer getMockRetailersWithSuccess:^(AFHTTPRequestOperation *operation, NSArray *retailers) {
+        NSLog(@"%@", retailers);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 #pragma mark - CLLocationManagerDelegate methods

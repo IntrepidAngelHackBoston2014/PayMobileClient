@@ -19,7 +19,6 @@
 		E69ACB2419439DB8009290F2 /* PaymentMethodStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E69ACB2319439DB8009290F2 /* PaymentMethodStore.m */; };
 		E69ACB271943A133009290F2 /* PaymentMethodFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E69ACB261943A133009290F2 /* PaymentMethodFilter.m */; };
 		E69ACB291943A47E009290F2 /* PayMapFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69ACB281943A47E009290F2 /* PayMapFilterViewController.xib */; };
-		E69ACB2E1943AE66009290F2 /* PayHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E69ACB2D1943AE66009290F2 /* PayHTTPClient.m */; };
 		E69ACB301943AEDF009290F2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69ACB2F1943AEDF009290F2 /* CFNetwork.framework */; };
 		E69ACB321943AEF2009290F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69ACB311943AEF2009290F2 /* CoreLocation.framework */; };
 		E6AC2B6C194380610082EA7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AC2B6B194380610082EA7F /* Foundation.framework */; };
@@ -34,6 +33,7 @@
 		E6AC2B87194380610082EA7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AC2B6F194380610082EA7F /* UIKit.framework */; };
 		E6AC2B8F194380610082EA7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2B8D194380610082EA7F /* InfoPlist.strings */; };
 		E6AC2B91194380610082EA7F /* PayMobileClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2B90194380610082EA7F /* PayMobileClientTests.m */; };
+		E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D7FB1943B8A000845E23 /* Retailer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,6 @@
 		E69ACB261943A133009290F2 /* PaymentMethodFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentMethodFilter.m; sourceTree = "<group>"; };
 		E69ACB281943A47E009290F2 /* PayMapFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayMapFilterViewController.xib; sourceTree = "<group>"; };
 		E69ACB2B1943AE4B009290F2 /* IPLCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPLCommonMacros.h; sourceTree = "<group>"; };
-		E69ACB2C1943AE66009290F2 /* PayHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayHTTPClient.h; sourceTree = "<group>"; };
-		E69ACB2D1943AE66009290F2 /* PayHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayHTTPClient.m; sourceTree = "<group>"; };
 		E69ACB2F1943AEDF009290F2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E69ACB311943AEF2009290F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E6AC2B68194380610082EA7F /* PayMobileClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMobileClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +85,8 @@
 		E6AC2B8C194380610082EA7F /* PayMobileClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PayMobileClientTests-Info.plist"; sourceTree = "<group>"; };
 		E6AC2B8E194380610082EA7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E6AC2B90194380610082EA7F /* PayMobileClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayMobileClientTests.m; sourceTree = "<group>"; };
+		E6F0D7FA1943B8A000845E23 /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
+		E6F0D7FB1943B8A000845E23 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +178,8 @@
 				E69ACB261943A133009290F2 /* PaymentMethodFilter.m */,
 				E69ACB1C194399FC009290F2 /* PayImages.h */,
 				E69ACB1D194399FC009290F2 /* PayImages.m */,
-				E69ACB2C1943AE66009290F2 /* PayHTTPClient.h */,
-				E69ACB2D1943AE66009290F2 /* PayHTTPClient.m */,
+				E6F0D7FA1943B8A000845E23 /* Retailer.h */,
+				E6F0D7FB1943B8A000845E23 /* Retailer.m */,
 			);
 			path = PayMobileClient;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 			files = (
 				E69ACB1B194395ED009290F2 /* PaymentMethod.m in Sources */,
 				E6AC2B7C194380610082EA7F /* AppDelegate.m in Sources */,
-				E69ACB2E1943AE66009290F2 /* PayHTTPClient.m in Sources */,
+				E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */,
 				E69ACB2419439DB8009290F2 /* PaymentMethodStore.m in Sources */,
 				E69ACB2119439D0D009290F2 /* PayMapFilterViewController.m in Sources */,
 				E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */,
@@ -478,7 +478,6 @@
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/AFNetworking\"",
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
-					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PayMobileClient/PayMobileClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -500,7 +499,6 @@
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/AFNetworking\"",
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
-					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PayMobileClient/PayMobileClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
