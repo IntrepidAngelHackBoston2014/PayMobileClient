@@ -11,6 +11,13 @@
 typedef enum {
     PaymentTypeUnknown,
     PaymentTypeStarbucks,
+    PaymentTypeDunkinDonuts,
+    PaymentTypeCumberlandFarms,
+    PaymentTypePayPal,
+    PaymentTypeLevelUp,
+    PaymentTypeBitCoin,
+    PaymentTypeLeaf,
+    PaymentTypeBitPay
 } PaymentType;
 
 typedef enum {
