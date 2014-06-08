@@ -27,7 +27,7 @@
 
 @property (assign, nonatomic) BOOL isShowFilter;
 @property (strong, nonatomic) PayMapFilterViewController *filterViewController;
-@property (strong, nonatomic) NSMutableSet *idSet;
+@property (strong, nonatomic) NSMutableDictionary *retailerIdToAnnotation;
 
 @property (assign, nonatomic) BOOL isShowPopup;
 @property (strong, nonatomic) RetailerDetailPopupViewController *popupViewController;
@@ -39,6 +39,10 @@
 @end
 
 @implementation PayMapViewController
+
+- (NSArray *)filteredRetailers {
+    return [self.filter filterRetailers:self.retailers];
+}
 
 - (void)didTapFilterButton:(id)sender {
     self.isShowFilter = !self.isShowFilter;
@@ -76,7 +80,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
 
     self.filter = [PaymentMethodFilter fullFilter];
-    self.idSet = [[NSMutableSet alloc] init];
+    self.retailerIdToAnnotation = [[NSMutableDictionary alloc] init];
     [self updateLocation];
 }
 
@@ -118,12 +122,22 @@
 }
 
 - (void)updateAnnotations {
+    NSArray *filtered = [self filteredRetailers];
     for (Retailer *retailer in self.retailers) {
-        //NSLog(@"%@", [retailer formattedAddress]);
-        PayMapAnnotation *annotation = [[PayMapAnnotation alloc] initWithRetailer:retailer];
-        if(![self.idSet containsObject:retailer.retailerId]){
-            [self.payMapView addAnnotation:annotation];
-            [self.idSet addObject:retailer.retailerId];
+        if ([filtered containsObject:retailer]) {
+            if (![self.retailerIdToAnnotation objectForKey:retailer.retailerId]) {
+                //Add annotation if it is included in the filter and not on the map
+                PayMapAnnotation *annotation = [[PayMapAnnotation alloc] initWithRetailer:retailer];
+                [self.payMapView addAnnotation:annotation];
+                [self.retailerIdToAnnotation setObject:annotation forKey:retailer.retailerId];
+            }
+        } else {
+            if ([self.retailerIdToAnnotation objectForKey:retailer.retailerId]) {
+                //Remove annotation if it is not included in the filter and on the map
+                PayMapAnnotation *annotation = [self.retailerIdToAnnotation objectForKey:retailer.retailerId];
+                [self.payMapView removeAnnotation:annotation];
+                [self.retailerIdToAnnotation removeObjectForKey:retailer.retailerId];
+            }
         }
     }
 }
@@ -223,11 +237,11 @@
 #pragma mark - PayMapFilterViewControllerDelegate methods
 
 - (void)filterViewController:(PayMapFilterViewController *)viewController didSelectPaymentMethod:(PaymentMethod *)paymentMethod {
-    [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
+    [self updateAnnotations];
 }
 
 - (void)filterViewController:(PayMapFilterViewController *)viewController didDeselectPaymentMethod:(PaymentMethod *)paymentMethod {
-    [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
+    [self updateAnnotations];
 }
 
 - (void)didCloseFilterViewController:(PayMapFilterViewController *)viewController {
