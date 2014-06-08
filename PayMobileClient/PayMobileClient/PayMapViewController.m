@@ -22,6 +22,7 @@
 @property (strong, nonatomic) PaymentMethodFilter *filter;
 @property (assign, nonatomic) BOOL isShowFilter;
 @property (strong, nonatomic) PayMapFilterViewController *filterViewController;
+@property (strong, nonatomic) NSMutableSet *idSet;
 
 @end
 
@@ -63,7 +64,7 @@
     for (PaymentMethod *method in [[PaymentMethodStore sharedStore] paymentMethods]) {
         [self.filter addMethod:method];
     }
-
+    self.idSet = [[NSMutableSet alloc] init];
     [self updateLocation];
 }
 
@@ -106,7 +107,10 @@
 - (void)updateAnnotations {
     for (Retailer *retailer in self.retailers) {
         PayMapAnnotation *annotation = [[PayMapAnnotation alloc] initWithRetailer:retailer];
-        [self.payMapView addAnnotation:annotation];
+        if(![self.idSet containsObject:retailer.retailerId]){
+            [self.payMapView addAnnotation:annotation];
+            [self.idSet addObject:retailer.retailerId];
+        }
     }
 }
 
