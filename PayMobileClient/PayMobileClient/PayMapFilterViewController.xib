@@ -16,11 +16,12 @@
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="50" id="9dZ-vg-hIl">
-                    <rect key="frame" x="0.0" y="0.0" width="102" height="504"/>
+                <tableView contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" style="plain" allowsMultipleSelection="YES" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="50" id="9dZ-vg-hIl">
+                    <rect key="frame" x="0.0" y="0.0" width="68" height="504"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6Jp-6Q-hjY"/>
                         <outlet property="delegate" destination="-1" id="SqG-6o-fMm"/>
@@ -33,13 +34,18 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view contentMode="scaleToFill" id="3lp-nu-HUV">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="68" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uZ2-JP-VV3">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                <view contentMode="scaleToFill" id="Fjc-dD-R7l">
+                    <rect key="frame" x="0.0" y="0.0" width="68" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uZ2-JP-VV3">
+                    <rect key="frame" x="0.0" y="0.0" width="68" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <state key="normal" title="Close">
+                    <state key="normal" image="collapse_72.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -47,8 +53,11 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.96078437566757202" green="0.96078437566757202" blue="0.96078437566757202" alpha="1" colorSpace="deviceRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="collapse_72.png" width="22" height="11"/>
+    </resources>
 </document>

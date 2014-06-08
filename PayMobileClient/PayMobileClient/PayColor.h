@@ -1,16 +1,16 @@
 //
-//  FilterTableViewCell.h
+//  PayColor.h
 //  PayMobileClient
 //
 //  Created by Colden Prime on 6/7/14.
 //  Copyright (c) 2014 IntrepidPursuits. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "PaymentMethod.h"
 
-@interface FilterTableViewCell : UITableViewCell
+@interface PayColor : NSObject
 
-- (void)setupWithPaymentMethod:(PaymentMethod *)method;
++ (UIColor *)colorWithPaymentType:(PaymentType)paymentType;
 
 @end

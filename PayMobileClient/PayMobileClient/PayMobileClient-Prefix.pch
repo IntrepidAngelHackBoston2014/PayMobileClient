@@ -21,4 +21,5 @@
 #import "SVProgressHUD.h"
 #import "IPLCommonMacros.h"
 #import <AFNetworking/AFNetworking.h>
+#import "UIColor+Hex.h"
 #endif

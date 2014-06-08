@@ -8,11 +8,13 @@
 
 #import "PayMapFilterViewController.h"
 #import "PaymentMethodStore.h"
+#import "FilterTableViewCell.h"
 
 @interface PayMapFilterViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *optionsTableView;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet FilterTableViewCell *cellFromNib;
 @property (strong, nonatomic) NSArray *paymentMethods;
 
 @end
@@ -32,12 +34,22 @@
     return self;
 }
 
+- (void)addTableViewShadow {
+    self.optionsTableView.layer.shadowOpacity = 0.5;
+    self.optionsTableView.layer.shadowRadius = 2.0;
+    self.optionsTableView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.optionsTableView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOutsideOfTableView:)];
     gr.delegate = self;
     [self.view addGestureRecognizer:gr];
+
+    [self addTableViewShadow];
+    [self.optionsTableView registerNib:[UINib nibWithNibName:@"FilterTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FilterTableViewCell"];
 
     self.paymentMethods = [[PaymentMethodStore sharedStore] paymentMethods];
     [self.optionsTableView reloadData];
@@ -81,13 +93,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
+    FilterTableViewCell *cell = (FilterTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FilterTableViewCell"];
 
     PaymentMethod *method = self.paymentMethods[indexPath.row];
-    cell.textLabel.text = method.displayName;
+    [cell setupWithPaymentMethod:method];
 
     return cell;
 }

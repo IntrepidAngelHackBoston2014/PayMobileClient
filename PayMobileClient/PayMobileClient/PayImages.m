@@ -15,25 +15,25 @@
     switch (paymentType) {
         case PaymentTypeBitPay:
         case PaymentTypeBitCoin:
-            filename = @"bitcoin_color_144.png";
+            filename = @"bitcoin_color_144";
             break;
         case PaymentTypeStarbucks:
-            filename = @"starbucks_color_144.png";
+            filename = @"starbucks_color_144";
             break;
         case PaymentTypePayPal:
-            filename = @"paypal_color_144.png";
+            filename = @"paypal_color_144";
             break;
         case PaymentTypeLevelUp:
-            filename = @"levelup_color_144.png";
+            filename = @"levelup_color_144";
             break;
         case PaymentTypeDunkinDonuts:
-            filename = @"dunkin_color_144.png";
+            filename = @"dunkin_color_144";
             break;
         case PaymentTypeCumberlandFarms:
-            filename = @"cfarms_color_144.png";
+            filename = @"cfarms_color_144";
             break;
         case PaymentTypeLeaf:
-            filename = @"leaf_color_144.png";
+            filename = @"leaf_color_144";
             break;
         default:
             break;
@@ -46,25 +46,25 @@
     switch (paymentType) {
         case PaymentTypeBitPay:
         case PaymentTypeBitCoin:
-            filename = @"bitcoin_grey_144.png";
+            filename = @"bitcoin_grey_144";
             break;
         case PaymentTypeStarbucks:
-            filename = @"starbucks_grey_144.png";
+            filename = @"starbucks_grey_144";
             break;
         case PaymentTypePayPal:
-            filename = @"paypal_grey_144.png";
+            filename = @"paypal_grey_144";
             break;
         case PaymentTypeLevelUp:
-            filename = @"levelup_grey_144.png";
+            filename = @"levelup_grey_144";
             break;
         case PaymentTypeDunkinDonuts:
-            filename = @"dunkin_grey_144.png";
+            filename = @"dunkin_grey_144";
             break;
         case PaymentTypeCumberlandFarms:
-            filename = @"cfarms_grey_144.png";
+            filename = @"cfarms_grey_144";
             break;
         case PaymentTypeLeaf:
-            filename = @"leaf_grey_144.png";
+            filename = @"leaf_grey_144";
             break;
         default:
             break;
@@ -77,25 +77,25 @@
     switch (paymentType) {
         case PaymentTypeBitPay:
         case PaymentTypeBitCoin:
-            filename = @"bitcoin_pin_144.png";
+            filename = @"bitcoin_pin_144";
             break;
         case PaymentTypeStarbucks:
-            filename = @"starbucks_pin_144.png";
+            filename = @"starbucks_pin_144";
             break;
         case PaymentTypePayPal:
-            filename = @"paypal_pin_144.png";
+            filename = @"paypal_pin_144";
             break;
         case PaymentTypeLevelUp:
-            filename = @"levelup_pin_144.png";
+            filename = @"levelup_pin_144";
             break;
         case PaymentTypeDunkinDonuts:
-            filename = @"dunkin_pin_144.png";
+            filename = @"dunkin_pin_144";
             break;
         case PaymentTypeCumberlandFarms:
-            filename = @"cfarms_pin_144.png";
+            filename = @"cfarms_pin_144";
             break;
         case PaymentTypeLeaf:
-            filename = @"leaf_pin_144.png";
+            filename = @"leaf_pin_144";
             break;
         default:
             break;

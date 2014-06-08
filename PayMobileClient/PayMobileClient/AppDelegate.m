@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PayMapViewController.h"
+#import "PayAppearance.h"
 
 @implementation AppDelegate
 
@@ -23,6 +24,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [self setupPonyDebugger];
+
+    [PayAppearance setupAppearance];
 
     PayMapViewController *mapController = [[PayMapViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapController];

@@ -29,7 +29,7 @@
     self = [super init];
     if (self) {
         self.paymentMethods = @[
-                                [[PaymentMethod alloc] initWithTypeString:@"bpay"],
+//                                [[PaymentMethod alloc] initWithTypeString:@"bpay"],
                                 [[PaymentMethod alloc] initWithTypeString:@"cfrm"],
                                 [[PaymentMethod alloc] initWithTypeString:@"coin"],
                                 [[PaymentMethod alloc] initWithTypeString:@"dnkn"],
