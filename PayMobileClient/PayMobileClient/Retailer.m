@@ -112,5 +112,29 @@
     return nil;
 }
 
+- (NSString *)formattedAddress {
+    NSMutableString *fmtString = [NSMutableString stringWithString:@""];
+    BOOL addNewline = NO;
+    if(![self.address isEqual:[NSNull null]] && [self.address length] != 0){
+        [fmtString appendString:self.address];
+        addNewline = YES;
+    }
+    if(![self.city isEqual:[NSNull null]] && [self.city length] != 0){
+        if(addNewline) {
+            [fmtString appendString:@"\n"];
+        }
+        [fmtString appendString:self.city];
+        addNewline = YES;
+    }
+    if(![self.state isEqual:[NSNull null]] && [self.state length] != 0){
+        if(addNewline) {
+            [fmtString appendString:@"\n"];
+        }
+        [fmtString appendString:self.state];
+        addNewline = YES;
+    }
+    return fmtString;
+}
+
 
 @end
