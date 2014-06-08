@@ -15,6 +15,7 @@
 #import "RetailerAnnotationView.h"
 #import "RetailerDetailPopupViewController.h"
 #import "LevelUpPaymentViewController.h"
+#import "WebViewController.h"
 
 @interface PayMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, PayMapFilterViewControllerDelegate, RetailerDetailPopupViewControllerDelegate>
 
@@ -254,6 +255,13 @@
 }
 
 - (void)payWithWebViewControllerWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    NSURL *url = [NSURL URLWithString:[paymentMethod externalURLString]];
+
+    if (url) {
+        WebViewController *vc = [[WebViewController alloc] init];
+        vc.urlToLoad = url;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)payWithExternalAppWithPaymentMethod:(PaymentMethod *)paymentMethod {

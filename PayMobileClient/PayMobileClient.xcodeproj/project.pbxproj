@@ -81,6 +81,8 @@
 		E6F0D8371944806000845E23 /* triangle-cut-42.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8321944806000845E23 /* triangle-cut-42.png */; };
 		E6F0D83A1944857500845E23 /* TipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D8391944857500845E23 /* TipCollectionViewCell.m */; };
 		E6F0D83C194485B700845E23 /* TipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D83B194485B700845E23 /* TipCollectionViewCell.xib */; };
+		E6F0D83F1944AADE00845E23 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D83E1944AADE00845E23 /* WebViewController.m */; };
+		E6F0D8411944AAFD00845E23 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8401944AAFD00845E23 /* WebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +192,9 @@
 		E6F0D8381944857500845E23 /* TipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCollectionViewCell.h; sourceTree = "<group>"; };
 		E6F0D8391944857500845E23 /* TipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCollectionViewCell.m; sourceTree = "<group>"; };
 		E6F0D83B194485B700845E23 /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipCollectionViewCell.xib; sourceTree = "<group>"; };
+		E6F0D83D1944AADE00845E23 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		E6F0D83E1944AADE00845E23 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		E6F0D8401944AAFD00845E23 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +350,9 @@
 				E6F0D8381944857500845E23 /* TipCollectionViewCell.h */,
 				E6F0D8391944857500845E23 /* TipCollectionViewCell.m */,
 				E6F0D83B194485B700845E23 /* TipCollectionViewCell.xib */,
+				E6F0D83D1944AADE00845E23 /* WebViewController.h */,
+				E6F0D83E1944AADE00845E23 /* WebViewController.m */,
+				E6F0D8401944AAFD00845E23 /* WebViewController.xib */,
 			);
 			path = PayMobileClient;
 			sourceTree = "<group>";
@@ -479,6 +487,7 @@
 				E6F0D81A1943EE3B00845E23 /* close_72@2x.png in Resources */,
 				70A056551943CDF600D73E6C /* paypal_pin_144@2x.png in Resources */,
 				E6F0D827194475CE00845E23 /* ProximaNova-Regular.otf in Resources */,
+				E6F0D8411944AAFD00845E23 /* WebViewController.xib in Resources */,
 				E6F0D8331944806000845E23 /* levelup_1@2x.png in Resources */,
 				70A056541943CDF600D73E6C /* levelup_pin_144@2x.png in Resources */,
 				70A056601943D05F00D73E6C /* dunkin_color_144@2x.png in Resources */,
@@ -552,6 +561,7 @@
 			files = (
 				E69ACB1B194395ED009290F2 /* PaymentMethod.m in Sources */,
 				E6F0D8081943D5AB00845E23 /* RetailerAnnotationView.m in Sources */,
+				E6F0D83F1944AADE00845E23 /* WebViewController.m in Sources */,
 				E6F0D82B19447F7700845E23 /* LevelUpPaymentViewController.m in Sources */,
 				E6AC2B7C194380610082EA7F /* AppDelegate.m in Sources */,
 				E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */,

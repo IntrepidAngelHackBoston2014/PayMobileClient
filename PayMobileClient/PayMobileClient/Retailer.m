@@ -93,6 +93,7 @@
         self.city = [dictionary objectForKey:(@"city")];
         self.state = [dictionary objectForKey:(@"state")];
         self.zipCode = [dictionary objectForKey:(@"zip_code")];
+        self.displayAddress = [dictionary objectForKey:(@"display_address")];
         self.phoneNumber = [dictionary objectForKey:(@"phone_number")];
         self.faxNumber = [dictionary objectForKey:(@"fax_number")];
         self.storeHours = [dictionary objectForKey:(@"store_hours")];

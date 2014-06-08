@@ -47,7 +47,7 @@
     self.paymentLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
 
     self.nameLabel.text = self.retailer.name;
-    self.addressLabel.text = [NSString stringWithFormat:@"%@\n%@, %@, %@", self.retailer.address, self.retailer.city, self.retailer.state, self.retailer.zipCode];
+    self.addressLabel.text = self.retailer.displayAddress;
     [self.paymentButton setImage:[PayImages iconImageWithPaymentType:self.retailer.primaryPaymentMethod.type] forState:UIControlStateNormal];
     self.paymentButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }

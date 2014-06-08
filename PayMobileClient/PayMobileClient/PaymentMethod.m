@@ -110,7 +110,7 @@
 - (NSString *)customURLScheme {
     switch (self.type) {
         case PaymentTypeStarbucks:
-            return @"sbux331177714//";
+            return @"sbux331177714://";
             break;
         case PaymentTypeDunkinDonuts:
             return @"dunkindonuts://";
@@ -150,6 +150,9 @@
 
 - (NSString *)externalURLString {
     switch (self.type) {
+        case PaymentTypeBitCoin:
+        case PaymentTypeBitPay:
+            return @"https://bitpay.com/";
         default:
             return @"Unknown";
     }
