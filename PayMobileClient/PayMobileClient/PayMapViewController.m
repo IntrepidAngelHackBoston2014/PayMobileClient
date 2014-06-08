@@ -32,6 +32,7 @@
 
 @property (assign, nonatomic) CLLocationCoordinate2D maxSwCoord;
 @property (assign, nonatomic) CLLocationCoordinate2D maxNeCoord;
+@property (strong, nonatomic) CLLocation *lastCenterPoint;
 
 @end
 
@@ -118,6 +119,7 @@
 
 - (void)updateAnnotations {
     for (Retailer *retailer in self.retailers) {
+        //NSLog(@"%@", [retailer formattedAddress]);
         PayMapAnnotation *annotation = [[PayMapAnnotation alloc] initWithRetailer:retailer];
         if(![self.idSet containsObject:retailer.retailerId]){
             [self.payMapView addAnnotation:annotation];
@@ -151,12 +153,16 @@
 - (BOOL)shouldCallServer{
     CGPoint nePoint = CGPointMake(self.payMapView.bounds.origin.x + self.payMapView.bounds.size.width, self.payMapView.bounds.origin.y);
     CGPoint swPoint = CGPointMake((self.payMapView.bounds.origin.x), (self.payMapView.bounds.origin.y + self.payMapView.bounds.size.height));
+    CLLocationCoordinate2D centerPoint = self.payMapView.centerCoordinate;
+    CLLocation *newCenter = [[CLLocation alloc]initWithLatitude:centerPoint.latitude longitude:centerPoint.longitude];
     CLLocationCoordinate2D neCoord = [self.payMapView convertPoint:nePoint toCoordinateFromView:self.payMapView];
     CLLocationCoordinate2D swCoord = [self.payMapView convertPoint:swPoint toCoordinateFromView:self.payMapView];
     BOOL shouldUpdate = NO;
 
     //if either ne or sw bound are outside of our previous bounds, trigger server call then reset bounds
-    if (neCoord.latitude > self.maxNeCoord.latitude || neCoord.longitude > self.maxNeCoord.longitude){
+    if([newCenter distanceFromLocation:self.lastCenterPoint]/1609.34 > 3.0){
+        shouldUpdate = YES;
+    } else if (neCoord.latitude > self.maxNeCoord.latitude || neCoord.longitude > self.maxNeCoord.longitude){
         shouldUpdate = YES;
     } else if (swCoord.latitude < self.maxSwCoord.latitude || swCoord.longitude < self.maxSwCoord.longitude) {
         shouldUpdate = YES;
@@ -164,6 +170,7 @@
     if(shouldUpdate){
         self.maxNeCoord = neCoord;
         self.maxSwCoord = swCoord;
+        self.lastCenterPoint = newCenter;
     }
     return shouldUpdate;
 }
