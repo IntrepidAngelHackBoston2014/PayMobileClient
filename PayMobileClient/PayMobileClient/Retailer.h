@@ -41,6 +41,7 @@ typedef void (^RetailerRequestFailure)(AFHTTPRequestOperation *operation, NSErro
 @property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) NSString *faxNumber;
 @property (strong, nonatomic) NSString *storeHours;
+@property (strong, nonatomic) NSString *displayAddress;
 @property (strong, nonatomic) NSArray *services;
 @property (strong, nonatomic) NSString *paymentServiceCode;
 @property (assign, nonatomic) CLLocationCoordinate2D coordinate;

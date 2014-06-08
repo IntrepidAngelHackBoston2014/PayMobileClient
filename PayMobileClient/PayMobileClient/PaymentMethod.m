@@ -110,7 +110,7 @@
 - (NSString *)customURLScheme {
     switch (self.type) {
         case PaymentTypeStarbucks:
-            return @"sbux331177714//";
+            return @"sbux331177714://";
             break;
         case PaymentTypeDunkinDonuts:
             return @"dunkindonuts://";
@@ -150,6 +150,18 @@
 
 - (NSString *)externalURLString {
     switch (self.type) {
+        case PaymentTypeBitCoin:
+        case PaymentTypeBitPay:
+            return @"https://bitpay.com/";
+        default:
+            return @"Unknown";
+    }
+}
+
+- (NSString *)alertString {
+    switch (self.type) {
+        case PaymentTypeLeaf:
+            return @"This location allows you to receive a paperless receipt courtesy of Leaf!";
         default:
             return @"Unknown";
     }
@@ -159,12 +171,15 @@
     switch (self.type) {
         case PaymentTypeStarbucks:
         case PaymentTypeDunkinDonuts:
-        case PaymentTypeLevelUp:
         case PaymentTypePayPal:
             return PaymentMethodPayTypeExternalApp;
             break;
+        case PaymentTypeLevelUp:
         case PaymentTypeCumberlandFarms:
             return PaymentMethodPayTypeDetailPage;
+            break;
+        case PaymentTypeLeaf:
+            return PaymentMethodPayTypeAlert;
             break;
         default:
             return PaymentMethodPayTypeWebView;

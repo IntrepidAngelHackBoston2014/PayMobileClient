@@ -14,6 +14,8 @@
 #import "PayMapAnnotation.h"
 #import "RetailerAnnotationView.h"
 #import "RetailerDetailPopupViewController.h"
+#import "LevelUpPaymentViewController.h"
+#import "WebViewController.h"
 
 @interface PayMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, PayMapFilterViewControllerDelegate, RetailerDetailPopupViewControllerDelegate>
 
@@ -100,8 +102,8 @@
     [self.locationManager startUpdatingLocation];
 }
 
-- (void)zoomToLocation:(CLLocation *)location radius:(CGFloat)radius animated:(BOOL)animated {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius * 2, radius * 2);
+- (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate radius:(CGFloat)radius animated:(BOOL)animated {
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius * 2, radius * 2);
     [self.payMapView setRegion:region animated:animated];
 }
 
@@ -132,8 +134,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations lastObject];
+    [self zoomToCoordinate:location.coordinate radius:1500 animated:NO];
     [self fetchRetailersForCoordinate:location.coordinate];
-    [self zoomToLocation:location radius:2000 animated:NO];
 
     [self.locationManager stopUpdatingLocation];
 }
@@ -194,6 +196,7 @@
     if([view.annotation isKindOfClass:[PayMapAnnotation class]]) {
         PayMapAnnotation *anotation = (PayMapAnnotation *)view.annotation;
         [self showDetailsForRetailer:anotation.retailer];
+        [self zoomToCoordinate:anotation.coordinate radius:1500 animated:YES];
     }
 }
 
@@ -237,12 +240,63 @@
 #pragma mark - RetailerDetailPopupViewControllerDelegate Methods
 
 - (void)popupViewController:(RetailerDetailPopupViewController *)viewController didTapPayWithPaymentMethod:(PaymentMethod *)paymentMethod {
-    NSLog(@"pay with: %@", paymentMethod);
+    switch (paymentMethod.methodPayType) {
+        case PaymentMethodPayTypeWebView:
+            [self payWithWebViewControllerWithPaymentMethod:paymentMethod];
+            break;
+        case PaymentMethodPayTypeExternalApp:
+            [self payWithExternalAppWithPaymentMethod:paymentMethod];
+            break;
+        case PaymentMethodPayTypeDetailPage:
+            [self payWithDetailViewControllerWithPaymentMethod:paymentMethod];
+            break;
+        case PaymentMethodPayTypeAlert:
+            [self payWithAlertWithPaymentMethod:paymentMethod];
+            break;
+    }
     [self hideDetailsForRetailer];
 }
 
 - (void)didTapClosePopupViewController:(RetailerDetailPopupViewController *)viewController {
+    for (id<MKAnnotation> annotation in [self.payMapView selectedAnnotations]) {
+        [self.payMapView deselectAnnotation:annotation animated:NO];
+    }
     [self hideDetailsForRetailer];
+}
+
+- (void)payWithWebViewControllerWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    NSURL *url = [NSURL URLWithString:[paymentMethod externalURLString]];
+
+    if (url) {
+        WebViewController *vc = [[WebViewController alloc] init];
+        vc.urlToLoad = url;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (void)payWithExternalAppWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    NSURL *url = [NSURL URLWithString:paymentMethod.customURLScheme];
+    if (url && [[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:paymentMethod.appStoreURLString]];
+    }
+}
+
+- (void)payWithDetailViewControllerWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    switch (paymentMethod.type) {
+        case PaymentTypeLevelUp: {
+            LevelUpPaymentViewController *vc = [[LevelUpPaymentViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)payWithAlertWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    [[[UIAlertView alloc] initWithTitle:nil message:paymentMethod.alertString delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
 }
 
 #pragma mark - Radius
@@ -251,7 +305,7 @@
     MKMapRect mRect = self.payMapView.visibleMapRect;
     MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMidY(mRect));
     MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMaxY(mRect));
-    return MIN(10, MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34);
+    return MIN(3, MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34);
 }
 
 @end
