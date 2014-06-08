@@ -14,6 +14,7 @@
 #import "PayMapAnnotation.h"
 #import "RetailerAnnotationView.h"
 #import "RetailerDetailPopupViewController.h"
+#import "LevelUpPaymentViewController.h"
 
 @interface PayMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, PayMapFilterViewControllerDelegate, RetailerDetailPopupViewControllerDelegate>
 
@@ -202,12 +203,46 @@
 #pragma mark - RetailerDetailPopupViewControllerDelegate Methods
 
 - (void)popupViewController:(RetailerDetailPopupViewController *)viewController didTapPayWithPaymentMethod:(PaymentMethod *)paymentMethod {
-    NSLog(@"pay with: %@", paymentMethod);
+    switch (paymentMethod.methodPayType) {
+        case PaymentMethodPayTypeWebView:
+            [self payWithWebViewControllerWithPaymentMethod:paymentMethod];
+            break;
+        case PaymentMethodPayTypeExternalApp:
+            [self payWithExternalAppWithPaymentMethod:paymentMethod];
+            break;
+        case PaymentMethodPayTypeDetailPage:
+            [self payWithDetailViewControllerWithPaymentMethod:paymentMethod];
+            break;
+    }
     [self hideDetailsForRetailer];
 }
 
 - (void)didTapClosePopupViewController:(RetailerDetailPopupViewController *)viewController {
     [self hideDetailsForRetailer];
+}
+
+- (void)payWithWebViewControllerWithPaymentMethod:(PaymentMethod *)paymentMethod {
+}
+
+- (void)payWithExternalAppWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    NSURL *url = [NSURL URLWithString:paymentMethod.customURLScheme];
+    if (url && [[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:paymentMethod.appStoreURLString]];
+    }
+}
+
+- (void)payWithDetailViewControllerWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    switch (paymentMethod.type) {
+        case PaymentTypeLevelUp: {
+            LevelUpPaymentViewController *vc = [[LevelUpPaymentViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - Radius

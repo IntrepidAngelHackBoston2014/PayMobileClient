@@ -72,6 +72,15 @@
 		E6F0D8241943F51B00845E23 /* RetailerDetailPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */; };
 		E6F0D827194475CE00845E23 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D825194475CE00845E23 /* ProximaNova-Regular.otf */; };
 		E6F0D828194475CE00845E23 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D826194475CE00845E23 /* ProximaNova-Bold.otf */; };
+		E6F0D82B19447F7700845E23 /* LevelUpPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D82A19447F7700845E23 /* LevelUpPaymentViewController.m */; };
+		E6F0D82D19447FA700845E23 /* LevelUpPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D82C19447FA700845E23 /* LevelUpPaymentViewController.xib */; };
+		E6F0D8331944806000845E23 /* levelup_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D82E1944806000845E23 /* levelup_1@2x.png */; };
+		E6F0D8341944806000845E23 /* levelup_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D82F1944806000845E23 /* levelup_2@2x.png */; };
+		E6F0D8351944806000845E23 /* levelup_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8301944806000845E23 /* levelup_3@2x.png */; };
+		E6F0D8361944806000845E23 /* levelup_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8311944806000845E23 /* levelup_4@2x.png */; };
+		E6F0D8371944806000845E23 /* triangle-cut-42.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8321944806000845E23 /* triangle-cut-42.png */; };
+		E6F0D83A1944857500845E23 /* TipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D8391944857500845E23 /* TipCollectionViewCell.m */; };
+		E6F0D83C194485B700845E23 /* TipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D83B194485B700845E23 /* TipCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +179,17 @@
 		E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetailerDetailPopupViewController.xib; sourceTree = "<group>"; };
 		E6F0D825194475CE00845E23 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		E6F0D826194475CE00845E23 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		E6F0D82919447F7700845E23 /* LevelUpPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUpPaymentViewController.h; sourceTree = "<group>"; };
+		E6F0D82A19447F7700845E23 /* LevelUpPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelUpPaymentViewController.m; sourceTree = "<group>"; };
+		E6F0D82C19447FA700845E23 /* LevelUpPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelUpPaymentViewController.xib; sourceTree = "<group>"; };
+		E6F0D82E1944806000845E23 /* levelup_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelup_1@2x.png"; sourceTree = "<group>"; };
+		E6F0D82F1944806000845E23 /* levelup_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelup_2@2x.png"; sourceTree = "<group>"; };
+		E6F0D8301944806000845E23 /* levelup_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelup_3@2x.png"; sourceTree = "<group>"; };
+		E6F0D8311944806000845E23 /* levelup_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelup_4@2x.png"; sourceTree = "<group>"; };
+		E6F0D8321944806000845E23 /* triangle-cut-42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle-cut-42.png"; sourceTree = "<group>"; };
+		E6F0D8381944857500845E23 /* TipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCollectionViewCell.h; sourceTree = "<group>"; };
+		E6F0D8391944857500845E23 /* TipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCollectionViewCell.m; sourceTree = "<group>"; };
+		E6F0D83B194485B700845E23 /* TipCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +225,11 @@
 		70A056481943CDB700D73E6C /* SlicedAssets */ = {
 			isa = PBXGroup;
 			children = (
+				E6F0D82E1944806000845E23 /* levelup_1@2x.png */,
+				E6F0D82F1944806000845E23 /* levelup_2@2x.png */,
+				E6F0D8301944806000845E23 /* levelup_3@2x.png */,
+				E6F0D8311944806000845E23 /* levelup_4@2x.png */,
+				E6F0D8321944806000845E23 /* triangle-cut-42.png */,
 				E6F0D8131943EE3B00845E23 /* back_72@2x.png */,
 				E6F0D8141943EE3B00845E23 /* card_72@2x.png */,
 				E6F0D8151943EE3B00845E23 /* close_72@2x.png */,
@@ -314,6 +339,12 @@
 				E6F0D7FB1943B8A000845E23 /* Retailer.m */,
 				E6F0D81D1943F00300845E23 /* PayAppearance.h */,
 				E6F0D81E1943F00300845E23 /* PayAppearance.m */,
+				E6F0D82919447F7700845E23 /* LevelUpPaymentViewController.h */,
+				E6F0D82A19447F7700845E23 /* LevelUpPaymentViewController.m */,
+				E6F0D82C19447FA700845E23 /* LevelUpPaymentViewController.xib */,
+				E6F0D8381944857500845E23 /* TipCollectionViewCell.h */,
+				E6F0D8391944857500845E23 /* TipCollectionViewCell.m */,
+				E6F0D83B194485B700845E23 /* TipCollectionViewCell.xib */,
 			);
 			path = PayMobileClient;
 			sourceTree = "<group>";
@@ -430,12 +461,15 @@
 				70A056531943CDF600D73E6C /* leaf_pin_144@2x.png in Resources */,
 				70A056631943D05F00D73E6C /* paypal_color_144@2x.png in Resources */,
 				E69ACB1219438589009290F2 /* PayMapViewController.xib in Resources */,
+				E6F0D8341944806000845E23 /* levelup_2@2x.png in Resources */,
 				E6AC2B76194380610082EA7F /* InfoPlist.strings in Resources */,
 				70A056521943CDF600D73E6C /* dunkin_pin_144@2x.png in Resources */,
+				E6F0D82D19447FA700845E23 /* LevelUpPaymentViewController.xib in Resources */,
 				70A0566E1943D07500D73E6C /* dunkin_grey_144@2x.png in Resources */,
 				E6F0D8181943EE3B00845E23 /* back_72@2x.png in Resources */,
 				70A056561943CDF600D73E6C /* starbucks_pin_144@2x.png in Resources */,
 				E6F0D828194475CE00845E23 /* ProximaNova-Bold.otf in Resources */,
+				E6F0D83C194485B700845E23 /* TipCollectionViewCell.xib in Resources */,
 				70A0566C1943D07500D73E6C /* bitcoin_grey_144@2x.png in Resources */,
 				E6F0D8191943EE3B00845E23 /* card_72@2x.png in Resources */,
 				70A0565F1943D05F00D73E6C /* cfarms_color_144@2x.png in Resources */,
@@ -445,15 +479,19 @@
 				E6F0D81A1943EE3B00845E23 /* close_72@2x.png in Resources */,
 				70A056551943CDF600D73E6C /* paypal_pin_144@2x.png in Resources */,
 				E6F0D827194475CE00845E23 /* ProximaNova-Regular.otf in Resources */,
+				E6F0D8331944806000845E23 /* levelup_1@2x.png in Resources */,
 				70A056541943CDF600D73E6C /* levelup_pin_144@2x.png in Resources */,
 				70A056601943D05F00D73E6C /* dunkin_color_144@2x.png in Resources */,
 				70A056621943D05F00D73E6C /* levelup_color_144@2x.png in Resources */,
 				E6F0D8241943F51B00845E23 /* RetailerDetailPopupViewController.xib in Resources */,
 				E6AC2B7E194380610082EA7F /* Images.xcassets in Resources */,
 				70A056641943D05F00D73E6C /* starbucks_color_144@2x.png in Resources */,
+				E6F0D8351944806000845E23 /* levelup_3@2x.png in Resources */,
 				E6F0D80C1943E40300845E23 /* FilterTableViewCell.xib in Resources */,
+				E6F0D8371944806000845E23 /* triangle-cut-42.png in Resources */,
 				E6F0D81B1943EE3B00845E23 /* collapse_72@2x.png in Resources */,
 				70A0566D1943D07500D73E6C /* cfarms_grey_144@2x.png in Resources */,
+				E6F0D8361944806000845E23 /* levelup_4@2x.png in Resources */,
 				70A056701943D07500D73E6C /* levelup_grey_144@2x.png in Resources */,
 				70A056711943D07500D73E6C /* paypal_grey_144@2x.png in Resources */,
 				E6F0D81C1943EE3B00845E23 /* settings_72@2x.png in Resources */,
@@ -514,6 +552,7 @@
 			files = (
 				E69ACB1B194395ED009290F2 /* PaymentMethod.m in Sources */,
 				E6F0D8081943D5AB00845E23 /* RetailerAnnotationView.m in Sources */,
+				E6F0D82B19447F7700845E23 /* LevelUpPaymentViewController.m in Sources */,
 				E6AC2B7C194380610082EA7F /* AppDelegate.m in Sources */,
 				E6F0D7FC1943B8A000845E23 /* Retailer.m in Sources */,
 				E69ACB2419439DB8009290F2 /* PaymentMethodStore.m in Sources */,
@@ -527,6 +566,7 @@
 				E6F0D8221943F50C00845E23 /* RetailerDetailPopupViewController.m in Sources */,
 				E69ACB1E194399FC009290F2 /* PayImages.m in Sources */,
 				E6F0D81F1943F00300845E23 /* PayAppearance.m in Sources */,
+				E6F0D83A1944857500845E23 /* TipCollectionViewCell.m in Sources */,
 				E6AC2B78194380610082EA7F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

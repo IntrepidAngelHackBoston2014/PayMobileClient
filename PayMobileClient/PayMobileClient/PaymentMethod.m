@@ -159,10 +159,10 @@
     switch (self.type) {
         case PaymentTypeStarbucks:
         case PaymentTypeDunkinDonuts:
-        case PaymentTypeLevelUp:
         case PaymentTypePayPal:
             return PaymentMethodPayTypeExternalApp;
             break;
+        case PaymentTypeLevelUp:
         case PaymentTypeCumberlandFarms:
             return PaymentMethodPayTypeDetailPage;
             break;
