@@ -19,6 +19,7 @@
 
 @interface PayMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, PayMapFilterViewControllerDelegate, RetailerDetailPopupViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *myLocButton;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *payMapView;
 @property (strong, nonatomic) NSArray *retailers;
@@ -59,6 +60,9 @@
     self.filterViewController.view.frame = self.view.bounds;
     [self.view addSubview:self.filterViewController.view];
     [self addChildViewController:self.filterViewController];
+}
+- (IBAction)centerMyLoc:(id)sender {
+    [self.payMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
 }
 
 - (void)hideFilterViewController {
@@ -161,6 +165,7 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     if (self.shouldCallServer) {
+        [self.payMapView setUserTrackingMode:MKUserTrackingModeNone];
         [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
     }
 }
