@@ -24,6 +24,7 @@ typedef enum {
     PaymentMethodPayTypeWebView,
     PaymentMethodPayTypeExternalApp,
     PaymentMethodPayTypeDetailPage,
+    PaymentMethodPayTypeAlert,
 } PaymentMethodPayType;
 
 @interface PaymentMethod : NSObject
@@ -34,6 +35,7 @@ typedef enum {
 @property (readonly, nonatomic) NSString *customURLScheme;
 @property (readonly, nonatomic) NSString *appStoreURLString;
 @property (readonly, nonatomic) NSString *externalURLString;
+@property (readonly, nonatomic) NSString *alertString;
 @property (readonly, nonatomic) PaymentMethodPayType methodPayType;
 
 - (id)initWithTypeString:(NSString *)typeString;

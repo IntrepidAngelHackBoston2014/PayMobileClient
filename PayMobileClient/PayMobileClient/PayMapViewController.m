@@ -243,6 +243,9 @@
         case PaymentMethodPayTypeDetailPage:
             [self payWithDetailViewControllerWithPaymentMethod:paymentMethod];
             break;
+        case PaymentMethodPayTypeAlert:
+            [self payWithAlertWithPaymentMethod:paymentMethod];
+            break;
     }
     [self hideDetailsForRetailer];
 }
@@ -283,6 +286,10 @@
         default:
             break;
     }
+}
+
+- (void)payWithAlertWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    [[[UIAlertView alloc] initWithTitle:nil message:paymentMethod.alertString delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
 }
 
 #pragma mark - Radius

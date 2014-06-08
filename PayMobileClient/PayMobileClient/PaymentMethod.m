@@ -158,6 +158,15 @@
     }
 }
 
+- (NSString *)alertString {
+    switch (self.type) {
+        case PaymentTypeLeaf:
+            return @"This location allows you to receive a paperless receipt courtesy of Leaf!";
+        default:
+            return @"Unknown";
+    }
+}
+
 - (PaymentMethodPayType)methodPayType {
     switch (self.type) {
         case PaymentTypeStarbucks:
@@ -168,6 +177,9 @@
         case PaymentTypeLevelUp:
         case PaymentTypeCumberlandFarms:
             return PaymentMethodPayTypeDetailPage;
+            break;
+        case PaymentTypeLeaf:
+            return PaymentMethodPayTypeAlert;
             break;
         default:
             return PaymentMethodPayTypeWebView;
