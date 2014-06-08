@@ -70,6 +70,8 @@
 		E6F0D81F1943F00300845E23 /* PayAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D81E1943F00300845E23 /* PayAppearance.m */; };
 		E6F0D8221943F50C00845E23 /* RetailerDetailPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D8211943F50C00845E23 /* RetailerDetailPopupViewController.m */; };
 		E6F0D8241943F51B00845E23 /* RetailerDetailPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */; };
+		E6F0D827194475CE00845E23 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D825194475CE00845E23 /* ProximaNova-Regular.otf */; };
+		E6F0D828194475CE00845E23 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D826194475CE00845E23 /* ProximaNova-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,8 @@
 		E6F0D8201943F50C00845E23 /* RetailerDetailPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetailerDetailPopupViewController.h; sourceTree = "<group>"; };
 		E6F0D8211943F50C00845E23 /* RetailerDetailPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetailerDetailPopupViewController.m; sourceTree = "<group>"; };
 		E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetailerDetailPopupViewController.xib; sourceTree = "<group>"; };
+		E6F0D825194475CE00845E23 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		E6F0D826194475CE00845E23 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +321,8 @@
 		E6AC2B72194380610082EA7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6F0D825194475CE00845E23 /* ProximaNova-Regular.otf */,
+				E6F0D826194475CE00845E23 /* ProximaNova-Bold.otf */,
 				E6AC2B73194380610082EA7F /* PayMobileClient-Info.plist */,
 				E6AC2B74194380610082EA7F /* InfoPlist.strings */,
 				E6AC2B77194380610082EA7F /* main.m */,
@@ -429,6 +435,7 @@
 				70A0566E1943D07500D73E6C /* dunkin_grey_144@2x.png in Resources */,
 				E6F0D8181943EE3B00845E23 /* back_72@2x.png in Resources */,
 				70A056561943CDF600D73E6C /* starbucks_pin_144@2x.png in Resources */,
+				E6F0D828194475CE00845E23 /* ProximaNova-Bold.otf in Resources */,
 				70A0566C1943D07500D73E6C /* bitcoin_grey_144@2x.png in Resources */,
 				E6F0D8191943EE3B00845E23 /* card_72@2x.png in Resources */,
 				70A0565F1943D05F00D73E6C /* cfarms_color_144@2x.png in Resources */,
@@ -437,6 +444,7 @@
 				70A056721943D07500D73E6C /* starbucks_grey_144@2x.png in Resources */,
 				E6F0D81A1943EE3B00845E23 /* close_72@2x.png in Resources */,
 				70A056551943CDF600D73E6C /* paypal_pin_144@2x.png in Resources */,
+				E6F0D827194475CE00845E23 /* ProximaNova-Regular.otf in Resources */,
 				70A056541943CDF600D73E6C /* levelup_pin_144@2x.png in Resources */,
 				70A056601943D05F00D73E6C /* dunkin_color_144@2x.png in Resources */,
 				70A056621943D05F00D73E6C /* levelup_color_144@2x.png in Resources */,

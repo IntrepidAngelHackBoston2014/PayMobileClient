@@ -7,6 +7,7 @@
 //
 
 #import "RetailerDetailPopupViewController.h"
+#import "PayImages.h"
 
 @interface RetailerDetailPopupViewController () <UIGestureRecognizerDelegate>
 
@@ -41,8 +42,14 @@
     gr.delegate = self;
     [self.view addGestureRecognizer:gr];
 
+    self.nameLabel.font = [UIFont fontWithName:@"ProximaNova-Bold" size:18];
+    self.addressLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+    self.paymentLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:18];
+
     self.nameLabel.text = self.retailer.name;
     self.addressLabel.text = [NSString stringWithFormat:@"%@\n%@, %@, %@", self.retailer.address, self.retailer.city, self.retailer.state, self.retailer.zipCode];
+    [self.paymentButton setImage:[PayImages iconImageWithPaymentType:self.retailer.primaryPaymentMethod.type] forState:UIControlStateNormal];
+    self.paymentButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didTapOutsideOfContentView:(UIGestureRecognizer *)gr {
