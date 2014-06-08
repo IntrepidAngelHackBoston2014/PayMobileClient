@@ -53,7 +53,7 @@
     }];
 }
 
-+ (void)getMockRetailersWithParameters:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
++ (void)getMockRetailersWithSuccess:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
     [self getRetailersWithParameters:nil success:success failure:failure];
 }
 

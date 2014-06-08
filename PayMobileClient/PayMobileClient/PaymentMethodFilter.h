@@ -19,4 +19,6 @@
 - (void)addMethod:(PaymentMethod *)paymentMethod;
 - (void)removeMethod:(PaymentMethod *)paymentMethod;
 
+- (NSArray *)filterRetailers:(NSArray *)retailers;
+
 @end

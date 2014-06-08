@@ -8,6 +8,7 @@
 
 #import "PaymentMethodFilter.h"
 #import "PaymentMethodStore.h"
+#import "Retailer.h"
 
 @interface PaymentMethodFilter ()
 
@@ -47,6 +48,18 @@
 
 - (void)removeMethod:(PaymentMethod *)paymentMethod {
     [self.selectedMethodsSet removeObject:paymentMethod];
+}
+
+- (NSArray *)filterRetailers:(NSArray *)retailers {
+    NSMutableArray *ret = [NSMutableArray array];
+
+    for (Retailer *retailer in retailers) {
+        if ([self containsMethod:retailer.primaryPaymentMethod]) {
+            [ret addObject:retailer];
+        }
+    }
+
+    return ret;
 }
 
 @end
