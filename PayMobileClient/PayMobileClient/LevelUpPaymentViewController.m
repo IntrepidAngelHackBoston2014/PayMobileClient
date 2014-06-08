@@ -23,6 +23,8 @@
 
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NavigationIcon"]];
+
     [self.tipsCollectionView registerNib:[UINib nibWithNibName:@"TipCollectionViewCell"
                                                         bundle:[NSBundle mainBundle]]
               forCellWithReuseIdentifier:@"TipCollectionViewCell"];

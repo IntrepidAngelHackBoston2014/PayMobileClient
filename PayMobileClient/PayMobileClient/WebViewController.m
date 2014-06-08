@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NavigationIcon"]];
+
     NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToLoad];
     [self.webView loadRequest:request];
 }
