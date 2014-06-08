@@ -30,6 +30,8 @@
 @property (assign, nonatomic) BOOL isShowPopup;
 @property (strong, nonatomic) RetailerDetailPopupViewController *popupViewController;
 
+@property (assign, nonatomic) CLLocationCoordinate2D maxSwCoord;
+@property (assign, nonatomic) CLLocationCoordinate2D maxNeCoord;
 
 @end
 
@@ -141,7 +143,29 @@
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
+    if (self.shouldCallServer) {
+        [self fetchRetailersForCoordinate:[self.payMapView centerCoordinate]];
+    }
+}
+
+- (BOOL)shouldCallServer{
+    CGPoint nePoint = CGPointMake(self.payMapView.bounds.origin.x + self.payMapView.bounds.size.width, self.payMapView.bounds.origin.y);
+    CGPoint swPoint = CGPointMake((self.payMapView.bounds.origin.x), (self.payMapView.bounds.origin.y + self.payMapView.bounds.size.height));
+    CLLocationCoordinate2D neCoord = [self.payMapView convertPoint:nePoint toCoordinateFromView:self.payMapView];
+    CLLocationCoordinate2D swCoord = [self.payMapView convertPoint:swPoint toCoordinateFromView:self.payMapView];
+    BOOL shouldUpdate = NO;
+
+    //if either ne or sw bound are outside of our previous bounds, trigger server call then reset bounds
+    if (neCoord.latitude > self.maxNeCoord.latitude || neCoord.longitude > self.maxNeCoord.longitude){
+        shouldUpdate = YES;
+    } else if (swCoord.latitude < self.maxSwCoord.latitude || swCoord.longitude < self.maxSwCoord.longitude) {
+        shouldUpdate = YES;
+    }
+    if(shouldUpdate){
+        self.maxNeCoord = neCoord;
+        self.maxSwCoord = swCoord;
+    }
+    return shouldUpdate;
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
