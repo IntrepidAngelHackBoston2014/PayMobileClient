@@ -78,6 +78,7 @@
     [filterButton sizeToFit];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NavigationIcon"]];
 
     self.filter = [PaymentMethodFilter fullFilter];
     self.retailerIdToAnnotation = [[NSMutableDictionary alloc] init];
