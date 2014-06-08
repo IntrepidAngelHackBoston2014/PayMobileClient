@@ -86,9 +86,9 @@
     [self.locationManager startUpdatingLocation];
 }
 
-- (void)zoomToLocation:(CLLocation *)location radius:(CGFloat)radius {
+- (void)zoomToLocation:(CLLocation *)location radius:(CGFloat)radius animated:(BOOL)animated {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius * 2, radius * 2);
-    [self.payMapView setRegion:region animated:YES];
+    [self.payMapView setRegion:region animated:animated];
 }
 
 - (void)fetchRetailersForCoordinate:(CLLocationCoordinate2D)coordinate {
@@ -115,7 +115,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations lastObject];
     [self fetchRetailersForCoordinate:location.coordinate];
-    [self zoomToLocation:location radius:2000];
+    [self zoomToLocation:location radius:2000 animated:NO];
 
     [self.locationManager stopUpdatingLocation];
 }
@@ -166,7 +166,7 @@
     MKMapRect mRect = self.payMapView.visibleMapRect;
     MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMidY(mRect));
     MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMaxY(mRect));
-    return MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34;
+    return MIN(10, MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34);
 }
 
 @end
