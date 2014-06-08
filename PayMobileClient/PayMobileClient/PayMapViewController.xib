@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayMapViewController">
             <connections>
+                <outlet property="myLocButton" destination="0sr-hD-4ts" id="rLw-mp-25D"/>
                 <outlet property="payMapView" destination="6ca-wM-tgO" id="gwn-xr-kCT"/>
                 <outlet property="view" destination="osg-Pz-rwm" id="0Cq-fZ-yRR"/>
             </connections>
@@ -22,6 +23,16 @@
                         <outlet property="delegate" destination="-1" id="utR-he-5rb"/>
                     </connections>
                 </mapView>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0sr-hD-4ts">
+                    <rect key="frame" x="259" y="446" width="61" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <state key="normal" image="center-me-72.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="centerMyLoc:" destination="-1" eventType="touchUpInside" id="SfC-2U-7Ys"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -29,4 +40,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="center-me-72.png" width="35" height="35"/>
+    </resources>
 </document>

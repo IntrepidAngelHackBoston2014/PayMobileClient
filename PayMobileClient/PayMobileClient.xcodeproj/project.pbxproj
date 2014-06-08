@@ -28,6 +28,7 @@
 		70A056701943D07500D73E6C /* levelup_grey_144@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056691943D07500D73E6C /* levelup_grey_144@2x.png */; };
 		70A056711943D07500D73E6C /* paypal_grey_144@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0566A1943D07500D73E6C /* paypal_grey_144@2x.png */; };
 		70A056721943D07500D73E6C /* starbucks_grey_144@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0566B1943D07500D73E6C /* starbucks_grey_144@2x.png */; };
+		70A056741944BBE200D73E6C /* center-me-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A056731944BBE200D73E6C /* center-me-72@2x.png */; };
 		A865100E951C4338AFB2EAC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C6D960DCF846EFAAE1E9D9 /* libPods.a */; };
 		E69ACB1019438500009290F2 /* PayMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69ACB0F19438500009290F2 /* PayMapViewController.m */; };
 		E69ACB1219438589009290F2 /* PayMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69ACB1119438589009290F2 /* PayMapViewController.xib */; };
@@ -117,6 +118,7 @@
 		70A056691943D07500D73E6C /* levelup_grey_144@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelup_grey_144@2x.png"; sourceTree = "<group>"; };
 		70A0566A1943D07500D73E6C /* paypal_grey_144@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paypal_grey_144@2x.png"; sourceTree = "<group>"; };
 		70A0566B1943D07500D73E6C /* starbucks_grey_144@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "starbucks_grey_144@2x.png"; sourceTree = "<group>"; };
+		70A056731944BBE200D73E6C /* center-me-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center-me-72@2x.png"; sourceTree = "<group>"; };
 		C393318B8F5F4054BAFF95DF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D2C6D960DCF846EFAAE1E9D9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69ACB0E19438500009290F2 /* PayMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMapViewController.h; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		70A056481943CDB700D73E6C /* SlicedAssets */ = {
 			isa = PBXGroup;
 			children = (
+				70A056731944BBE200D73E6C /* center-me-72@2x.png */,
 				E6F0D82E1944806000845E23 /* levelup_1@2x.png */,
 				E6F0D82F1944806000845E23 /* levelup_2@2x.png */,
 				E6F0D8301944806000845E23 /* levelup_3@2x.png */,
@@ -490,6 +493,7 @@
 				E6F0D8411944AAFD00845E23 /* WebViewController.xib in Resources */,
 				E6F0D8331944806000845E23 /* levelup_1@2x.png in Resources */,
 				70A056541943CDF600D73E6C /* levelup_pin_144@2x.png in Resources */,
+				70A056741944BBE200D73E6C /* center-me-72@2x.png in Resources */,
 				70A056601943D05F00D73E6C /* dunkin_color_144@2x.png in Resources */,
 				70A056621943D05F00D73E6C /* levelup_color_144@2x.png in Resources */,
 				E6F0D8241943F51B00845E23 /* RetailerDetailPopupViewController.xib in Resources */,

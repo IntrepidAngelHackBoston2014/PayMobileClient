@@ -152,7 +152,7 @@
     switch (self.type) {
         case PaymentTypeBitCoin:
         case PaymentTypeBitPay:
-            return @"https://bitpay.com/";
+            return @"https://coinbase.com/accounts/5394792a6ec5fb091200000a";
         default:
             return @"Unknown";
     }
