@@ -74,10 +74,7 @@
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
 
-    self.filter = [[PaymentMethodFilter alloc] init];
-    for (PaymentMethod *method in [[PaymentMethodStore sharedStore] paymentMethods]) {
-        [self.filter addMethod:method];
-    }
+    self.filter = [PaymentMethodFilter fullFilter];
     self.idSet = [[NSMutableSet alloc] init];
     [self updateLocation];
 }
@@ -107,7 +104,8 @@
 }
 
 - (void)fetchRetailersForCoordinate:(CLLocationCoordinate2D)coordinate {
-    [Retailer getRetailersWithFilter:self.filter coordinate:coordinate
+    [Retailer getRetailersWithFilter:[PaymentMethodFilter fullFilter]
+                          coordinate:coordinate
                               radius:[self getRadius]
                              success:^(AFHTTPRequestOperation *operation, NSArray *retailers) {
                                  self.retailers = retailers;

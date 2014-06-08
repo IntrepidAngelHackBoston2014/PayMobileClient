@@ -100,8 +100,6 @@
         self.paymentServiceCode = [dictionary objectForKey:(@"payment_service_code")];
         self.services = [dictionary objectForKey:(@"services")];
         self.coordinate = CLLocationCoordinate2DMake([[dictionary objectForKey:(@"latitude")] floatValue], [[dictionary objectForKey:(@"longitude")] floatValue]);
-
-        NSLog(@"%@", self.paymentServiceCode);
     }
     return self;
 }

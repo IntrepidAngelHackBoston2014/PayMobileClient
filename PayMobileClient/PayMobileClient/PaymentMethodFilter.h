@@ -11,6 +11,8 @@
 
 @interface PaymentMethodFilter : NSObject
 
++ (PaymentMethodFilter *)fullFilter;
+
 @property (readonly, nonatomic) NSArray *selectedMethods;
 
 - (BOOL)containsMethod:(PaymentMethod *)paymentMethod;

@@ -7,6 +7,7 @@
 //
 
 #import "PaymentMethodFilter.h"
+#import "PaymentMethodStore.h"
 
 @interface PaymentMethodFilter ()
 
@@ -15,6 +16,14 @@
 @end
 
 @implementation PaymentMethodFilter
+
++ (PaymentMethodFilter *)fullFilter {
+    PaymentMethodFilter *filter = [[PaymentMethodFilter alloc] init];
+    for (PaymentMethod *method in [[PaymentMethodStore sharedStore] paymentMethods]) {
+        [filter addMethod:method];
+    }
+    return filter;
+}
 
 - (id)init {
     self = [super init];
