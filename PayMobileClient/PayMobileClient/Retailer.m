@@ -53,7 +53,7 @@
     }];
 }
 
-+ (void)getRetailersWithParameters:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
++ (void)getMockRetailersWithParameters:(RetailerRequestSuccess)success failure:(RetailerRequestFailure)failure {
     [self getRetailersWithParameters:nil success:success failure:failure];
 }
 
@@ -99,6 +99,8 @@
         self.paymentServiceCode = [dictionary objectForKey:(@"payment_service_code")];
         self.services = [dictionary objectForKey:(@"services")];
         self.coordinate = CLLocationCoordinate2DMake([[dictionary objectForKey:(@"latitude")] floatValue], [[dictionary objectForKey:(@"longitude")] floatValue]);
+
+        NSLog(@"%@", self.paymentServiceCode);
     }
     return self;
 }

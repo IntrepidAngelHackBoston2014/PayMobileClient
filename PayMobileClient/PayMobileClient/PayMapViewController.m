@@ -13,15 +13,22 @@
 #import "Retailer.h"
 #import "PayMapAnnotation.h"
 #import "RetailerAnnotationView.h"
+#import "RetailerDetailPopupViewController.h"
 
-@interface PayMapViewController () <CLLocationManagerDelegate, PayMapFilterViewControllerDelegate, MKMapViewDelegate>
+@interface PayMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, PayMapFilterViewControllerDelegate, RetailerDetailPopupViewControllerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *payMapView;
 @property (strong, nonatomic) NSArray *retailers;
 @property (strong, nonatomic) PaymentMethodFilter *filter;
+
+
 @property (assign, nonatomic) BOOL isShowFilter;
 @property (strong, nonatomic) PayMapFilterViewController *filterViewController;
+
+@property (assign, nonatomic) BOOL isShowPopup;
+@property (strong, nonatomic) RetailerDetailPopupViewController *popupViewController;
+
 
 @end
 
@@ -55,9 +62,12 @@
 
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                          target:self
-                                                                                          action:@selector(didTapFilterButton:)];
+    UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [filterButton setImage:[UIImage imageNamed:@"card_72"] forState:UIControlStateNormal];
+    [filterButton addTarget:self action:@selector(didTapFilterButton:) forControlEvents:UIControlEventTouchUpInside];
+    [filterButton sizeToFit];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
 
     self.filter = [[PaymentMethodFilter alloc] init];
     for (PaymentMethod *method in [[PaymentMethodStore sharedStore] paymentMethods]) {
@@ -145,6 +155,35 @@
     return annotationView;
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    if([view.annotation isKindOfClass:[PayMapAnnotation class]]) {
+        PayMapAnnotation *anotation = (PayMapAnnotation *)view.annotation;
+        [self showDetailsForRetailer:anotation.retailer];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+    if([view.annotation isKindOfClass:[PayMapAnnotation class]]) {
+        [self hideDetailsForRetailer];
+    }
+}
+
+- (void)showDetailsForRetailer:(Retailer *)retailer {
+    self.isShowPopup = YES;
+    self.popupViewController = [[RetailerDetailPopupViewController alloc] initWithRetailer:retailer];
+    self.popupViewController.delegate = self;
+    self.popupViewController.view.frame = self.view.bounds;
+    [self.view addSubview:self.popupViewController.view];
+    [self addChildViewController:self.popupViewController];
+}
+
+- (void)hideDetailsForRetailer {
+    self.isShowPopup = NO;
+    [self.popupViewController.view removeFromSuperview];
+    [self.popupViewController removeFromParentViewController];
+    self.popupViewController = nil;
+}
+
 #pragma mark - PayMapFilterViewControllerDelegate methods
 
 - (void)filterViewController:(PayMapFilterViewController *)viewController didSelectPaymentMethod:(PaymentMethod *)paymentMethod {
@@ -160,7 +199,18 @@
     [self hideFilterViewController];
 }
 
-#pragma mark - 
+#pragma mark - RetailerDetailPopupViewControllerDelegate Methods
+
+- (void)popupViewController:(RetailerDetailPopupViewController *)viewController didTapPayWithPaymentMethod:(PaymentMethod *)paymentMethod {
+    NSLog(@"pay with: %@", paymentMethod);
+    [self hideDetailsForRetailer];
+}
+
+- (void)didTapClosePopupViewController:(RetailerDetailPopupViewController *)viewController {
+    [self hideDetailsForRetailer];
+}
+
+#pragma mark - Radius
 
 - (CLLocationDistance)getRadius {
     MKMapRect mRect = self.payMapView.visibleMapRect;

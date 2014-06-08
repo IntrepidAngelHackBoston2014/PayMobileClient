@@ -68,6 +68,8 @@
 		E6F0D81B1943EE3B00845E23 /* collapse_72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8161943EE3B00845E23 /* collapse_72@2x.png */; };
 		E6F0D81C1943EE3B00845E23 /* settings_72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8171943EE3B00845E23 /* settings_72@2x.png */; };
 		E6F0D81F1943F00300845E23 /* PayAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D81E1943F00300845E23 /* PayAppearance.m */; };
+		E6F0D8221943F50C00845E23 /* RetailerDetailPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F0D8211943F50C00845E23 /* RetailerDetailPopupViewController.m */; };
+		E6F0D8241943F51B00845E23 /* RetailerDetailPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,9 @@
 		E6F0D8171943EE3B00845E23 /* settings_72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_72@2x.png"; sourceTree = "<group>"; };
 		E6F0D81D1943F00300845E23 /* PayAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayAppearance.h; sourceTree = "<group>"; };
 		E6F0D81E1943F00300845E23 /* PayAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayAppearance.m; sourceTree = "<group>"; };
+		E6F0D8201943F50C00845E23 /* RetailerDetailPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetailerDetailPopupViewController.h; sourceTree = "<group>"; };
+		E6F0D8211943F50C00845E23 /* RetailerDetailPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetailerDetailPopupViewController.m; sourceTree = "<group>"; };
+		E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetailerDetailPopupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +293,9 @@
 				E6F0D7FD1943BD8600845E23 /* FilterTableViewCell.h */,
 				E6F0D7FE1943BD8600845E23 /* FilterTableViewCell.m */,
 				E6F0D80B1943E40300845E23 /* FilterTableViewCell.xib */,
+				E6F0D8201943F50C00845E23 /* RetailerDetailPopupViewController.h */,
+				E6F0D8211943F50C00845E23 /* RetailerDetailPopupViewController.m */,
+				E6F0D8231943F51B00845E23 /* RetailerDetailPopupViewController.xib */,
 				E69ACB2219439DB8009290F2 /* PaymentMethodStore.h */,
 				E69ACB2319439DB8009290F2 /* PaymentMethodStore.m */,
 				E69ACB19194395ED009290F2 /* PaymentMethod.h */,
@@ -432,6 +440,7 @@
 				70A056541943CDF600D73E6C /* levelup_pin_144@2x.png in Resources */,
 				70A056601943D05F00D73E6C /* dunkin_color_144@2x.png in Resources */,
 				70A056621943D05F00D73E6C /* levelup_color_144@2x.png in Resources */,
+				E6F0D8241943F51B00845E23 /* RetailerDetailPopupViewController.xib in Resources */,
 				E6AC2B7E194380610082EA7F /* Images.xcassets in Resources */,
 				70A056641943D05F00D73E6C /* starbucks_color_144@2x.png in Resources */,
 				E6F0D80C1943E40300845E23 /* FilterTableViewCell.xib in Resources */,
@@ -507,6 +516,7 @@
 				E6F0D8021943CD0C00845E23 /* PayMapAnnotation.m in Sources */,
 				E69ACB271943A133009290F2 /* PaymentMethodFilter.m in Sources */,
 				E6F0D8121943E5C100845E23 /* UIColor+Hex.m in Sources */,
+				E6F0D8221943F50C00845E23 /* RetailerDetailPopupViewController.m in Sources */,
 				E69ACB1E194399FC009290F2 /* PayImages.m in Sources */,
 				E6F0D81F1943F00300845E23 /* PayAppearance.m in Sources */,
 				E6AC2B78194380610082EA7F /* main.m in Sources */,
