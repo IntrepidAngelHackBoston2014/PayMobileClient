@@ -100,8 +100,8 @@
     [self.locationManager startUpdatingLocation];
 }
 
-- (void)zoomToLocation:(CLLocation *)location radius:(CGFloat)radius animated:(BOOL)animated {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius * 2, radius * 2);
+- (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate radius:(CGFloat)radius animated:(BOOL)animated {
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius * 2, radius * 2);
     [self.payMapView setRegion:region animated:animated];
 }
 
@@ -131,8 +131,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations lastObject];
+    [self zoomToCoordinate:location.coordinate radius:1500 animated:NO];
     [self fetchRetailersForCoordinate:location.coordinate];
-    [self zoomToLocation:location radius:2000 animated:NO];
 
     [self.locationManager stopUpdatingLocation];
 }
@@ -188,6 +188,7 @@
     if([view.annotation isKindOfClass:[PayMapAnnotation class]]) {
         PayMapAnnotation *anotation = (PayMapAnnotation *)view.annotation;
         [self showDetailsForRetailer:anotation.retailer];
+        [self zoomToCoordinate:anotation.coordinate radius:1500 animated:YES];
     }
 }
 
@@ -246,6 +247,9 @@
 }
 
 - (void)didTapClosePopupViewController:(RetailerDetailPopupViewController *)viewController {
+    for (id<MKAnnotation> annotation in [self.payMapView selectedAnnotations]) {
+        [self.payMapView deselectAnnotation:annotation animated:NO];
+    }
     [self hideDetailsForRetailer];
 }
 
@@ -279,7 +283,7 @@
     MKMapRect mRect = self.payMapView.visibleMapRect;
     MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMidY(mRect));
     MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMidX(mRect), MKMapRectGetMaxY(mRect));
-    return MIN(10, MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34);
+    return MIN(3, MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/1609.34);
 }
 
 @end
